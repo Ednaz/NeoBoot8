@@ -118,6 +118,7 @@ class StartImage(Screen):
              'sf8008', 
              'bcm7251',
              'sf4008',
+             'et1x000',
              'bcm7251s',
              'h7',
              'hi3798mv200'
