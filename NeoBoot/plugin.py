@@ -1109,9 +1109,9 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
                                            
     def chackupdate3(self):
 		
-        os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot;curl -O --ftp-ssl https://raw.githubusercontent.com/gutosie/neoboot2/master/ver.txt;sleep 3;cd /')            
+        os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot;curl -O --ftp-ssl https://raw.githubusercontent.com/gutosie/NeoBoot_VuUltimo4K/master/ver.txt;sleep 3;cd /')            
         if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ver.txt'):
-            os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot;fullwget --no-check-certificate https://raw.githubusercontent.com/gutosie/neoboot2/master/ver.txt; sleep 3;cd /')
+            os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot;fullwget --no-check-certificate https://raw.githubusercontent.com/gutosie/NeoBoot_VuUltimo4K/master/ver.txt; sleep 3;cd /')
             if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ver.txt'):
                 self.session.open(MessageBox, _('Unfortunately, at the moment not found an update, try again later.'), MessageBox.TYPE_INFO, 8)
         else:
@@ -1132,13 +1132,13 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
         if yesno:
             if fileExists('/tmp/*.zip'):
                 os.system('rm /tmp/*.zip')
-            os.system('cd /tmp; curl -O --ftp-ssl https://codeload.github.com/gutosie/neoboot2/zip/master; mv /tmp/master /tmp/neoboot.zip; cd /')
+            os.system('cd /tmp; curl -O --ftp-ssl https://codeload.github.com/gutosie/NeoBoot_VuUltimo4K/zip/master; mv /tmp/master /tmp/neoboot.zip; cd /')
             if not fileExists('/tmp/neoboot.zip'):
-                    os.system('cd /tmp;fullwget --no-check-certificate https://codeload.github.com/gutosie/neoboot2/zip/master; mv /tmp/master /tmp/neoboot.zip; sleep 3;cd ')
+                    os.system('cd /tmp;fullwget --no-check-certificate https://codeload.github.com/gutosie/NeoBoot_VuUltimo4K/zip/master; mv /tmp/master /tmp/neoboot.zip; sleep 3;cd ')
                     if not fileExists('/tmp/neoboot.zip'):
                         self.session.open(MessageBox, _('Unfortunately, at the moment not found an update, try again later.'), MessageBox.TYPE_INFO, 8)
             else:                                                                                                                                                                                                                                                                                                                                                   
-                os.system('cd /tmp/; unzip -qn ./neoboot.zip; rm -f ./neoboot.zip; cp -rf ./neoboot2-master/NeoBoot /usr/lib/enigma2/python/Plugins/Extensions; rm -rf /tmp/neoboot2-master;  rm /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ver.txt; cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/; chmod 0755 ./bin/neoini*;  chmod 0755 ./ex_init.py; chmod 0755 ./target/*; chmod 0755 ./files/NeoBoot.sh; chmod 0755 ./files/S50fat.sh; cd')                    
+                os.system('cd /tmp/; unzip -qn ./neoboot.zip; rm -f ./neoboot.zip; cp -rf ./NeoBoot_VuUltimo4K-master/NeoBoot /usr/lib/enigma2/python/Plugins/Extensions; rm -rf /tmp/NeoBoot_VuUltimo4K-master;  rm /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ver.txt; cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/; chmod 0755 ./bin/neoini*;  chmod 0755 ./ex_init.py; chmod 0755 ./target/*; chmod 0755 ./files/NeoBoot.sh; chmod 0755 ./files/S50fat.sh; cd')                    
                 if getCPUtype() == 'MIPS':
                     os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/; cp -rf ./bin/neoinitmipsvu /sbin; chmod 755 /sbin/neoinitmipsvu; cp -rf ./bin/neoinitmips /sbin; chmod 755 /sbin/neoinitmips; cd')                    
                 #elif getCPUtype() == 'ARMv7':
