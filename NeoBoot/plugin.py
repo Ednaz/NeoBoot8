@@ -1088,9 +1088,10 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
             mess = _('Downloading available only from the image Flash.')
             self.session.open(MessageBox, mess, MessageBox.TYPE_INFO)
         else:
-            out = open('%sImageBoot/.neonextboot', 'w' % getNeoLocation())
+            out = open('%sImageBoot/.neonextboot' % getNeoLocation() , 'w')
             out.write('Flash')
             out.close()
+	
             message = _('\n\n\n')
             message += _('WARNING !: The update brings with it the risk of errors.\n')
             message += _('Before upgrading it is recommended that you make a backup NeoBoot.\n')
