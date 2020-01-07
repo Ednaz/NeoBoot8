@@ -1,0 +1,22 @@
+#!/bin/sh
+IMAGE=ImageBoot
+NEOBOOTMOUNT=$( cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location) 
+rm -f /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+
+                            orgimag=`mount | sed '/sd/!d' | cut -d" " -f1`
+                               for item in $orgimag; do
+                                   ohdd=`echo  $item | cut -d"/" -f3`
+                                   nhdd=`mount | sed "/\$ohdd/!d" | sed q | cut -d" " -f3`
+                                   if [ $nhdd == '$NEOBOOTMOUNT' ]; then
+                                      echo $nhdd  
+                                      echo "mkdir "$nhdd  >> /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+                                      echo "mount "$item $nhdd  >> /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom                                                                          
+                                   else
+                                      echo "umount "$nhdd  >> /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+                                      echo "mkdir "$nhdd  >> /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+                                      echo "mount "$item $nhdd  >> /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+                                      echo ok
+                                   fi    
+                               done
+                               chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
+                               
