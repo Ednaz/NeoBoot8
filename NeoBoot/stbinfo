@@ -1,0 +1,59 @@
+#!/bin/sh
+#Wspierane tunery satelitarne:
+#Machine BCM - getCPUSoC(): 
+
+cat /proc/stb/info/chipset:  
+cat /proc/stb/info/chipset
+cat /etc/hostname
+cat /proc/cpuinfo
+cat /proc/version
+cat /etc/issue
+cat /proc/mtd
+mtd_debug info /dev/mtd0
+cat /proc/cmdline
+cat /proc/partitions
+cat /var/lib/opkg/info/kernel-image*.postinst
+
+
+
+
+
+Ultimo4k            :    7444s 
+Solo4k              :    7376  
+Zero 4K             :    72604  
+Duo4k               :    7278  #BCM7278 
+Uno4K               :    7252s 
+Uno4kSE             :    7252s  
+Ultimo              :    7405(with 3D) 
+Uno                 :    7405(with 3D) 
+Duo                 :    7335 
+Duo2                :    7424    
+Zero                :    7362                 
+Solo                :    7325
+Solose              :    7241 
+Solose-v2           :    7241 
+Solo2               :    7356  
+              
+Formuler F1         :    bcm7356    
+Formuler F3         :    7362       
+     
+Miraclebox MBmini   :    bcm7358    
+Miraclebox Micro    :    bcm7362     
+Miraclebox Ultra    :    bcm7424                             
+  
+Octagon Sf8008      :    3798mv200
+Octagon SF4008      :    bcm7251
+
+Zgemma h7S          :    bcm7251s 
+Zgemma H9S          :    hi3798mv200 hostname: zgemmah9s; mtd6: 01000000 00020000 "kernel" ;    mtd7: 0ea00000 00020000 "rootfs"      
+
+AX HD60 4K          :    hi3798mv200 # cat /etc/hostname : ax60
+
+OSmini              :    BCM7362
+
+atemio6000          :    bcm7362   
+
+gbquad4k            :    bcm7252s    # cat /proc/stb/info/model : gbquad4k #  # cat /etc/hostname : gbquad4k # cat /proc/cmdline root=/dev/mmcblk0p5 rootwait rw rootflags=data=journal libata.force=1:3.0G,2:3.0G,3:3.0G coherent_poll=2M vmalloc=525m bmem=529m@491m bmem=608m@2464m
+
+ustym4kpro: cat /proc/stb/info/chipset 3798mv200 root@ustym4kpro: cat /etc/hostname ustym4kpro
+ 
