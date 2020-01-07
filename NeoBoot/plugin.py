@@ -46,8 +46,8 @@ import time
 # save this copyright notice. This document/program is distributed WITHOUT any
 # warranty, use at YOUR own risk.
 
-PLUGINVERSION = '1.00'
-UPDATEVERSION = '1.01'
+PLUGINVERSION = '8.00'
+UPDATEVERSION = '8.01'
 
 def Freespace(dev):
     statdev = os.statvfs(dev)
