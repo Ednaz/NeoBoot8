@@ -1,0 +1,1370 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NeoBoot\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2019-03-12 15:30+0200\n"
+"Last-Translator: gutosie <gutosie@o2.pl>\n"
+"Language-Team: gutosie- GaduGadu nr. 5111900 <http://all-forum.cba.pl >\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid ""
+"\n"
+"Completely uninstall NeoBota: \n"
+"If you think NeoBot not you need it, you can uninstall it.\n"
+"To uninstall now press the red button on the remote control.\n"
+"\n"
+msgstr ""
+"\n"
+"Kompletne odinstalowanie NeoBota: \n"
+"Jeśli uważasz, że NeoBoot nie jest ci potrzebny, możesz go odinstalować.\n"
+"Aby odinstalować, naciśnij czerwony przycisk na pilocie.\n"
+"\n"
+
+msgid "Start the chosen system now ?"
+msgstr "Uruchomić teraz wybrany obraz ?"
+
+msgid ""
+" is already installed.\n"
+" Please try another name."
+msgstr ""
+" Jest już zainstalowany.\n"
+" Proszę spróbować innej nazwy."
+
+msgid ""
+"   \n"
+"   Available: "
+msgstr ""
+"   \n"
+"   Dostępna pamięć na dysku: "
+
+msgid "Boot Image"
+msgstr "Uruchom obraz"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Install"
+msgstr "Instaluj"
+
+msgid "Delete Confirmation"
+msgstr "Potwierdzenie usunięcia"
+
+msgid "Devices Panel"
+msgstr "Panel urządzeń"
+
+msgid ""
+"Do You really want to install NeoBoot in:\n"
+" "
+msgstr ""
+"Instalacja NeoBoota przebiegnie w pełni automatycznie i potrwa kilka sekund.\\n\n"
+"Czy chcesz zainstalować NeoBoota na wybranym nośniku:  "
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "Please choose an image to boot"
+msgstr "Wybierz obraz do rozruchu"
+
+msgid "WARNING !: The update brings with it the risk of errors.\n"
+msgstr "OSTRZEŻENIE: Aktualizacja niesie za sobą ryzyko błędów.\n"
+
+msgid "Before upgrading it is recommended that you make a backup NeoBoot.\n"
+msgstr "Przed aktualizacją zaleca się utworzenie kopii zapasowej NeoBoota.\n"
+
+msgid "Do you want to run the update now ?\n"
+msgstr "Czy chcesz teraz uruchomić aktualizację?\n"
+
+msgid "Canceled update."
+msgstr "Anulowana aktualizacja."
+
+msgid ""
+"NeoBoot has detected update.\n"
+"Do you want to update NeoBoota now ?"
+msgstr ""
+"NeoBoot wykrył aktualizację.\n"
+"Czy chcesz teraz zaktualizować NeoBoota ?"
+
+msgid "Image Name"
+msgstr "Nazwa obrazu"
+
+msgid "Image will be booted on the next STB boot!"
+msgstr "Obraz zostanie uruchomiony przy następnym rozruchu odbiornika!"
+
+msgid "Info"
+msgstr "Informacje"
+
+msgid "Install & run multiple images."
+msgstr "Zainstaluj i uruchom wiele obrazów."
+
+msgid "Install Confirmation"
+msgstr "Potwierdzenie instalacji"
+
+msgid "Install Image"
+msgstr "Instalacja obrazu"
+
+msgid "Installation aborted !"
+msgstr "Instalacja przerwana!"
+
+msgid "NeoBoot"
+msgstr "NeoBoot"
+
+msgid "NeoBoot - Image Installation"
+msgstr "NeoBoot-Instalacja obrazu"
+
+msgid "NeoBoot - Installation"
+msgstr "NeoBoot-Instalacja"
+
+msgid "NeoBoot - Menu"
+msgstr "NeoBoot-Menu"
+
+msgid "Deleting in progress...\n"
+msgstr "Usuwanie w toku...\n"
+
+msgid "NeoBoot has been installed succesfully !"
+msgstr ""
+"Gratulacje NeoBoot jest poprawnie zainstalowany.\n"
+"\\nTeraz można ponownie uruchomić wtyczkę !"
+
+msgid "NeoBoot is running from:"
+msgstr "NeoBoot jest uruchomiony z:"
+
+msgid "NeoBoot is running image:"
+msgstr "Aktualnie uruchomiony obraz:"
+
+msgid ""
+"NeoBoot successfully updated. You can restart the plugin now.\n"
+"Have fun !!!"
+msgstr ""
+"NeoBoot został pomyślnie zaktualizowany.Możesz teraz uruchomić ponownie wtyczkę.\n"
+"Baw się dobrze !!!"
+
+msgid ""
+"NeoBoot successfully updated list tv.\n"
+"Have fun !!"
+msgstr ""
+"NeoBoot pomyślnie zaktualizował listę tv.\n"
+"Baw się dobrze !!"
+
+msgid "NeoBot started installing new image.\n"
+msgstr "NeoBot zaczął instalować nowy obraz.\n"
+
+msgid "NeoBoot: Deleting Image"
+msgstr "NeoBoot: Usuwanie obrazu"
+
+msgid "NeoBoot: Install new image"
+msgstr "NeoBoot: Instalacja nowego obrazu"
+
+msgid "Number of images installed:"
+msgstr "Liczba zainstalowanych obrazów:"
+
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "NIE WOLNO ponownie uruchamiać lub wyłączać zasilania odbiornika.\n"
+
+msgid "Remove Image "
+msgstr "Usuwanie obrazu "
+
+msgid "Download Image"
+msgstr "Pobieranie obrazu"
+
+msgid "Removing canceled!"
+msgstr "Usuwanie anulowane!"
+
+msgid "Delete password"
+msgstr "Usuwanie hasła"
+
+msgid "Update NeoBot"
+msgstr "Aktualizacja NeoBoota"
+
+msgid "Make copy"
+msgstr "Utwórz kopię"
+
+msgid "Restoring backup"
+msgstr "Przywracanie kopii zapasowej"
+
+msgid "The update has been canceled."
+msgstr "Aktualizacja została anulowana."
+
+msgid "Install the new images from the Internet"
+msgstr "Zainstaluj nowe obrazy z internetu"
+
+msgid "Sorry it seems that there are not Linux formatted devices mounted on your STB. To install NeoBoot you need a Linux formatted part1 device."
+msgstr "Niestety wydaje się, że nie są poprawnie sformatowane urządzenia zamontowane w odbiorniku.Aby zainstalować NeoBoota trzeba sformatować urządzenie  w formacie linux."
+
+msgid "Sorry the name of the new Image is too long."
+msgstr "Niestety,nazwa nowego obrazu jest zbyt długa.Proszę nadać nową krótszą nazwę."
+
+msgid "Sorry this name is reserved. Choose another name for the new Image."
+msgstr "Niestety ta nazwa jest już używana.Wybierz inną nazwę dla nowego obrazu."
+
+msgid "Sorry you cannot delete Flash image"
+msgstr "Niestety,nie można usunąć obrazu zainstalowanego w pamieci flesza odbiornika"
+
+msgid "Sorry you cannot delete the image currently booted from."
+msgstr "Niestety,nie można usunąć aktualnie uruchomionego obrazu."
+
+msgid "Sorry, Meoboot can be installed or upgraded only when booted from Flash"
+msgstr "Niestety,NeoBoot może instalować obraz lub być uaktualniony tylko wtedy,gdy jest uruchomiony z flesza"
+
+msgid "Sorry, an Image with the name "
+msgstr "Przepraszam,obraz o nazwie "
+
+msgid ""
+"Sorry, there is not any connected devices in your STB.\n"
+"Please connect HDD or USB to install NeoBoot!"
+msgstr ""
+"Niestety,nie ma żadnych podłączonych urządzeń w Twoim odbiorniku.\n"
+"Proszę podłączyć usb lub hdd do zainstalowania NeoBoota!"
+
+msgid "Sorry: Wrong image in flash found. You have to install in flash OpenSPA Image"
+msgstr "Przepraszamy:znaleziono nieprawidłowy obraz w pamięci flesza..Musisz zainstalować w fleszu OpenPLi"
+
+msgid "Source Image file"
+msgstr "Plik zródła obrazu"
+
+msgid "Would you like to download the image from the network now ?"
+msgstr "Czy chcesz teraz pobrać obraz z sieci?"
+
+msgid ""
+"The directory %s is not a EXT2, EXT3, EXT4 or NFS partition.\n"
+"Make sure you select a valid partition type."
+msgstr ""
+"To urządzenie %s nie jest sformatowane w EXT2, EXT3, EXT4.\n"
+"Upewnij się, że wybierasz prawidłowy typ partycji."
+
+msgid ""
+"The directory %s is not writable.\n"
+"Make sure you select a writable directory instead."
+msgstr ""
+"Katalog %s nie jest zapisywalny.\n"
+"Upewnij się,że zamiast tego wybierasz katalog z możliwością zapisu."
+
+msgid "Please, wait..."
+msgstr "Proszę czekać..."
+
+msgid "Keyboard"
+msgstr "Klawiatura"
+
+msgid "Copy the channel list ?"
+msgstr "Skopiować listę kanałów ?"
+
+msgid "Copy CamdMenager ?"
+msgstr "Skopiować Menadzer Cam ?"
+
+msgid "Copy the drivers ? (Recommended only other image.)"
+msgstr "Skopiować sterowniki z lib ? (Zalecane tylko dla innych obrazów.)"
+
+msgid "Copy mounting disks ? (Recommended)"
+msgstr "Skopiować montowanie dysków ? (Zalecane)"
+
+msgid "Remove zip file after installation ?"
+msgstr "Usunąć plik zip po instalacj ?"
+
+msgid "Used: "
+msgstr "Użyta pamięć na dysku: "
+
+msgid "Copy the network settings DNS ? (Not recommended for VTi)"
+msgstr "Skopiować ustawienia sieciowe DNS ?(Nie zalecane dla VTi)"
+
+msgid "Start the new image after installation ?"
+msgstr "Uruchomić nowy obraz po instalacji ?"
+
+msgid "Stop processes E2 for installation ?"
+msgstr "Zatrzymać procesy E2 na czas instalacji ?"
+
+msgid "Overwrite the files of the module and firmware ?"
+msgstr "Zastąpić pliki modułu i oprogramowania układowego?"
+
+msgid "Welcome to NeoBoot %s Plugin installation."
+msgstr "Witamy w instalacji wtyczki NeoBoota %s."
+
+msgid "You are not running OpenSPA Image. You must mount devices Your self."
+msgstr "Nie używasz obrazu OpenPLi. Należy ręcznie zamontować urządzenie."
+
+msgid "You have to provide a name for the new Image."
+msgstr ""
+"Katalog /media/ neoboot/ImagesUpload jest pusty!\\n\n"
+"Wgraj pliki obrazu w formacie .ZIP lub .NFI, lub podaj nazwę nowego obrazu."
+
+msgid ""
+"You have to select one Image to install.\n"
+"Please, upload your zip file in the folder: /media/neoboot/ImagesUpload and select the image to install."
+msgstr ""
+"Musisz wybrać jeden obraz do zainstalowania.\n"
+"Proszę przesłać plik .zip do folderu: /media/neoboot/ImagesUpload i wybrać obraz aby go zainstalować."
+
+msgid "You really want to install NeoBoot in:"
+msgstr "Naprawdę chcesz zainstalować NeoBoota na:"
+
+msgid "no image to remove"
+msgstr "brak obrazu do usunięcia"
+
+msgid "remove"
+msgstr "usuwanie"
+
+msgid "unknown"
+msgstr "nieznany"
+
+msgid "/proc/mounts"
+msgstr "/proc/montowania"
+
+msgid " Failed to open /proc/mounts"
+msgstr " Nie można otworzyć /proc/mounts"
+
+msgid " /proc/filesystems"
+msgstr " /proc/systemy plików"
+
+msgid " Failed to read /proc/filesystems:"
+msgstr " Nie można odczytać/proc/systemy plików:"
+
+msgid "device"
+msgstr "urządzenie"
+
+msgid "/part"
+msgstr "/część"
+
+msgid "part"
+msgstr "część"
+
+msgid "disc"
+msgstr "dysk"
+
+msgid "/sys/block/"
+msgstr "/sys/blok/"
+
+msgid "/dev"
+msgstr "/urządzenie"
+
+msgid "Unable to determine structure of /dev"
+msgstr "Nie można określić struktury w urządzeniu"
+
+msgid "new Harddisk"
+msgstr "nowy dysk twardy"
+
+msgid "External (CF)"
+msgstr "Zewnętrzny (CF)"
+
+msgid "Internal"
+msgstr "Wewnętrzny"
+
+msgid "External"
+msgstr "Zewnętrzny"
+
+msgid "size"
+msgstr "rozmiar"
+
+msgid "/model"
+msgstr "/marka"
+
+msgid "/vendor"
+msgstr "/użyte"
+
+msgid " Failed to get model:"
+msgstr " Nie udało się uzyskać marki:"
+
+msgid "umount "
+msgstr "od montuj "
+
+msgid "[Harddisk]"
+msgstr "[Dysk Twardy]"
+
+msgid " mounting:"
+msgstr " montowanie:"
+
+msgid "Initializing storage device..."
+msgstr "Inicjowanie urządzenia pamięci masowej ..."
+
+msgid "Removing partition table"
+msgstr "Usuwanie tabeli partycji"
+
+msgid "Rereading partition table"
+msgstr "Ponowne odczytanie tabeli partycji"
+
+msgid "Waiting for partition"
+msgstr "Oczekiwanie na partycji"
+
+msgid "Creating partition"
+msgstr "Tworzenie partycji"
+
+msgid "Creating filesystem"
+msgstr "Tworzenie systemu plików"
+
+msgid "/proc/version"
+msgstr "/proc/wersja"
+
+msgid "Failed to detect Linux version:"
+msgstr "Nie można wykryć wersji Linux:"
+
+msgid "largefile"
+msgstr "duży plik"
+
+msgid "Waiting for mount"
+msgstr "Oczekiwanie na montowanie"
+
+msgid "Checking filesystem..."
+msgstr "Sprawdzam system plików ..."
+
+msgid "You system does not support ext4"
+msgstr "Twój system nie obsługuje ext4"
+
+msgid "Converting ext3 to ext4..."
+msgstr "Konwersja ext3 na ext4..."
+
+msgid "Partition(mountpoint=%s,description=%s,device=%s)"
+msgstr "Partycja(punkt montowania=%s,opis=%s,urządzenie=%s)"
+
+msgid "Device %s is not mounted"
+msgstr "Urządzenie %s nie jest zamontowane"
+
+msgid "update packages"
+msgstr "pakiety aktualizacji"
+
+msgid "update"
+msgstr "aktualizacja"
+
+msgid "Internal flash"
+msgstr "Wewnętrzny flesz"
+
+msgid " enumerating block devices..."
+msgstr " wyliczanie bloków urządzenia..."
+
+msgid " enumerating network mounts..."
+msgstr " wyliczanie montowania sieci..."
+
+msgid "new Network Mount"
+msgstr "nowe montowanie sieci"
+
+msgid "new Network Mount being used as HDD replacement -> /media/hdd/"
+msgstr "nowe montowanie sieci stosowane jako dysk twardy -> /media/hdd/"
+
+msgid "couldn't determine blockdev physdev for device"
+msgstr "nie udało się ustalić bloków urządzenia physdev dla urządzenia"
+
+msgid "External Storage %s"
+msgstr "Dysk zewnętrzny %s"
+
+msgid "couldn't read model: "
+msgstr "nie mogę odczytać marki: "
+
+msgid "Partition %d"
+msgstr "Partycja %d"
+
+msgid " Failed to set %s speed to %s"
+msgstr " Nie udało się ustawić %s prędkość do %s"
+
+msgid "Unmount"
+msgstr "Odmontuj"
+
+msgid "Mount"
+msgstr "Montowanie"
+
+msgid "/dev/nomount.%s"
+msgstr "/urządzenie/bez montowania.%s"
+
+msgid "ERROR: Failed to create /dev/nomount file:"
+msgstr "BŁĄD: nie udało się utworzyć pliku w urządzeniu,brak montowania :"
+
+msgid "ERROR: Failed to remove /dev/nomount file:"
+msgstr "BŁĄD: Nie można usunąć BŁĄD: nie udało się  pliku w urządzeniu,brak montowania :"
+
+msgid "Writing inode tables:"
+msgstr "Zapisywanie tabel węzła:"
+
+msgid "Creating journal"
+msgstr "Tworzenie dziennika"
+
+msgid "inode"
+msgstr "węzeł"
+
+msgid "journal"
+msgstr "dziennik"
+
+msgid " No mountpoints found?"
+msgstr " Nie znaleziono punktów montowania?"
+
+msgid "Failed to remove path '%s':"
+msgstr "Nie udało się usunąć ścieżki '%s':"
+
+msgid "unavailable"
+msgstr "niedostępne"
+
+msgid "system type"
+msgstr "typ systemu"
+
+msgid "Processor"
+msgstr "Procesor"
+
+msgid "processor"
+msgstr "procesor"
+
+msgid "undefined"
+msgstr "niezdefiniowany"
+
+msgid "Extract contents of UBI image."
+msgstr "Wyodrębnij zawartość obrazu UBI."
+
+msgid ""
+"\n"
+"[NeoBoot] Zip file unzipped.\n"
+"Installation in progress, please wait ..."
+msgstr ""
+"\n"
+"[NeoBoot] Plik zip wypakowany.\n"
+"Instalacja w toku, proszę czekac..."
+
+msgid ""
+"Wait almost over ...\n"
+"Loading the image to: %s"
+msgstr ""
+"Czekaj prawie koniec ... \n"
+" Ładowanie obrazu do:%s"
+
+msgid "Maintain file permissions, requires running as root. (default: False)"
+msgstr "Zachowaj uprawnienia do plików,wymaga uruchomienia jako root. (domyślnie: False)"
+
+msgid "Suppress warnings and non-fatal errors. (default: False)"
+msgstr "Pomijaj ostrzeżenia i błędy krytyczne. (domyślnie: False)"
+
+msgid "Specify PEB size"
+msgstr "Określ rozmiar PEB"
+
+msgid "Specify output directory path."
+msgstr "Określ ścieżkę do katalogu wyjściowego."
+
+msgid "filepath"
+msgstr "ścieżka pliku"
+
+msgid "File to extract contents of."
+msgstr "Plik do wyodrębnienia zawartości.."
+
+msgid "File path doesn't exist."
+msgstr "Ścieżka do plik nie istnieje."
+
+msgid "Volume output directory is not empty. %s"
+msgstr "Katalog wyjściowy woluminu nie jest pusty. %s"
+
+msgid "Writing to: %s"
+msgstr "Zapisywanie do: %s"
+
+msgid "errors"
+msgstr "błędy"
+
+msgid "Error Count Header"
+msgstr "Liczba błędów nagłówka"
+
+msgid "Volume Table Record: %s"
+msgstr "Zapis tabeli pojemności: %s"
+
+msgid "name"
+msgstr "nazwa"
+
+msgid "Volume: %s"
+msgstr "Pojemność: %s"
+
+msgid "No blocks found."
+msgstr "Nie znaleziono bloków."
+
+msgid "Delete"
+msgstr "Usunąć"
+
+msgid "Read Only"
+msgstr "Tylko do odczytu"
+
+msgid "Preserve"
+msgstr "Zachować"
+
+msgid "Reject"
+msgstr "Odrzucić"
+
+msgid "%sUBI File"
+msgstr "%s Plik UBI"
+
+msgid "\t%sMin I/O: %s"
+msgstr "\t%s Min. I/O: %s"
+
+msgid "\t%sLEB Size: %s"
+msgstr "\t%s Rozmiar LEB: %s"
+
+msgid "\t%sPEB Size: %s"
+msgstr "\t%s Rozmiar PEB: %s"
+
+msgid "\t%sTotal Block Count: %s"
+msgstr "\t%s Łączna liczba bloków:: %s"
+
+msgid "\t%sData Block Count: %s"
+msgstr "\t%s Dane liczby bloków: %s"
+
+msgid "\t%sLayout Block Count: %s"
+msgstr "\t%s Układ liczby bloków: %s"
+
+msgid "\t%sInternal Volume Block Count: %s"
+msgstr "\t%s Wewnętrzna liczba bloków objętości: %s"
+
+msgid "\t%sUnknown Block Count: %s"
+msgstr "\t%s Nieznana liczba bloków: %s"
+
+msgid "\t%sFirst UBI PEB Number: %s"
+msgstr "\t%s Pierwszy numer UBI PEB: %s"
+
+msgid "\t%sImage Sequence Num: %s"
+msgstr "\t%s Numer sekwencji obrazu: %s"
+
+msgid "\t%sVolume Name:%s"
+msgstr "\t%s Nazwa objętości:%s"
+
+msgid "\t%sPEB Range: %s - %s"
+msgstr "\t%s Zakres PEB: %s - %s"
+
+msgid "\t%sName: %s"
+msgstr "\t%s Nazwa: %s"
+
+msgid "\t%sBlock Count: %s"
+msgstr "\t%s Liczba bloków: %s"
+
+msgid "\t%sVolume Record"
+msgstr "\t%s Objętości wgrywania"
+
+msgid "\t%sFile Offset: %s"
+msgstr "\t%s Przesunięcie pliku: %s"
+
+msgid "\t%sBlock Size: %s"
+msgstr "\t%s Rozmiar bloku: %s"
+
+msgid "\t%sInternal Volume: %s"
+msgstr "\t%s Objętość wewnętrzna: %s"
+
+msgid "\t%sIs Volume Table: %s"
+msgstr "\t%sIs Tabela objętości: %s"
+
+msgid "\t%sIs Valid: %s"
+msgstr "\t%s Jest prawidłowy:: %s"
+
+msgid "\t%sErase Count Header"
+msgstr "\t%s Usuwanie nagłówka licznika"
+
+msgid "\t%sVID Header Header"
+msgstr "\t%s Nagłówek nagłówka VID"
+
+msgid "autoresize"
+msgstr "autoregulacja"
+
+msgid "Image: %s"
+msgstr "Obraz: %s"
+
+msgid "Start offset larger than file size!"
+msgstr "Rozpocznij przesunięcie większe niż rozmiar pliku!"
+
+msgid "UBIFS Common Header"
+msgstr "Wspólny nagłówek UBIFS"
+
+msgid "UBIFS Super Block Node"
+msgstr "Super blok węzła UBIFS"
+
+msgid "UBIFS Master Block Node"
+msgstr "Węzeł bloku głównego UBIFS"
+
+msgid "UBIFS Directory Entry Node"
+msgstr "Węzeł wprowadzania katalogu UBIFS"
+
+msgid "offset"
+msgstr "przesunięcie"
+
+msgid "UBIFS Data Node"
+msgstr "Węzeł danych UBIFS"
+
+msgid "UBIFS Index Node"
+msgstr "Węzeł indeksu UBIFS"
+
+msgid "Backup"
+msgstr "Kopia zapasowa"
+
+msgid "list"
+msgstr "lista"
+
+msgid "Backup Confirmation"
+msgstr "Potwierdzenie kopii zapasowej"
+
+msgid "NeoBoot: Backup Image"
+msgstr "NeoBoot: Kopia zapasowa obrazu"
+
+msgid "Backup Image"
+msgstr "Kopia zapasowa obrazu"
+
+msgid "Backup image"
+msgstr "Kopia zapasowa obrazu"
+
+msgid "Install Kernel"
+msgstr "Zainstaluj jądro"
+
+msgid "Used Kernel:Flash"
+msgstr "Użyte jądro:flesz"
+
+msgid "Kernel Version: "
+msgstr "Wersja jądra: "
+
+msgid "Flash"
+msgstr "Flesz"
+
+msgid "Sorry you cannot overwrite the image currently booted from. Please, boot from Flash to restore this backup."
+msgstr "Niestety nie można zastąpić aktualnie uruchamianego obrazu.Proszę uruchomić z pamięci flesza,aby przywrócić kopię zapasową."
+
+msgid "Restore Confirmation"
+msgstr "Potwierdzenie przywracania"
+
+msgid "Wait please, NeoBoot is working: ....Restore in progress...."
+msgstr "Proszę czekać, NeoBoot pracuje: ....Trwa przywracanie...."
+
+msgid "NeoBoot: Restore COMPLETE !"
+msgstr "NeoBoot: Przywracanie KOMPLETNE !"
+
+msgid "NeoBoot: Restore Image"
+msgstr "NeoBoot: Przywracanie obrazu"
+
+msgid ""
+"\n"
+"\n"
+"NeoBoot restoring media mounts...."
+msgstr ""
+"\n"
+"\n"
+"NeoBoot przywrócenie montowania...."
+
+msgid ""
+"\n"
+"\n"
+"NeoBoot remove complete...."
+msgstr ""
+"\n"
+"\n"
+"NeoBoot usuwanie kompletne..."
+
+msgid "NeoBoot is removing..."
+msgstr "NeoBoot jest usuwany..."
+
+msgid "NeoBoot: Deleting All Images"
+msgstr "NeoBoot: Usuwanie wszystkich obrazów"
+
+msgid "NeoBoot: Download Image...."
+msgstr "NeoBoot: Pobieranie obrazu...."
+
+msgid "NeoBoot new Image download"
+msgstr "NeoBoot pobieranie nowego obrazu"
+
+msgid ""
+"GUI needs a restart.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Odbiornik wymaga ponownego uruchomienia..\n"
+"Czy chcesz ponownie uruchomić GUI ?"
+
+msgid "Restart GUI now?"
+msgstr "Uruchomić ponownie GUI?"
+
+msgid "Backup NeoBoot"
+msgstr "Kopia zapasowa NeoBoota"
+
+msgid "NeoBoot is based on a egamiboot < mod by gutosie and madu >\n"
+msgstr "NeoBoot bazuje na egamiboot <mod gutosie i madu>\n"
+
+msgid "nfidump by gutemine - Thanks\n"
+msgstr "nfidump by gutemine - Thanks/Dzięki\n"
+
+msgid "Sorry, NeoBot installs new images only from the Flash"
+msgstr "Przepraszamy,NeoBoot instaluje nowe obrazy tylko z flesza"
+
+msgid ""
+"NeoBot has detected that it is not running image from the memory of the decoder.\n"
+"Start selected image now ?"
+msgstr ""
+"NeoBot wykrył, że obraz nie działa z pamięci dekodera. \n"
+"Teraz uruchomić wybrany obraz ?"
+
+msgid "Download additional images from the network"
+msgstr "Pobierz dodatkowe obrazy z sieci"
+
+msgid "The installation process may take a few minutes.\n"
+msgstr "Proces instalacji może potrwać kilka minut.\n"
+
+msgid "Please, wait...\n"
+msgstr "Proszę czekać...\n"
+
+msgid "Copy the system settings ? (Not recommended)"
+msgstr "Skopiować ustawienia systemowe ? (Nie zalecane)"
+
+msgid "Multi image"
+msgstr "Instalacja wielu obrazów"
+
+msgid "NeoBoot installation image"
+msgstr "NeoBoot instalacja obrazu"
+
+msgid "STB name:"
+msgstr "Nazwa odbiornika:"
+
+msgid ""
+"[NeoBoot] The /media/neoboot/ImagesUpload directory is EMPTY !!!\n"
+"Please upload the image files in .ZIP or .NFI formats to install.\n"
+msgstr ""
+"[NeoBoot] Katalog /media/neoboot/ImagesUpload jest PUSTY!\n"
+"Proszę przesłać pliki obrazu w formacie.ZIP lub .NFI i ponowić instalację.\n"
+
+msgid ""
+"The /media/neoboot/ImagesUpload directory is EMPTY!\n"
+"Please upload the image files in .ZIP or .NFI formats to install."
+msgstr ""
+"Katalog /media/neoboot/ImagesUpload jest PUSTY!\n"
+"Proszę przesłać pliki obrazu w formacie.ZIP lub .NFI i ponowić instalację."
+
+msgid "The operation has been canceled or meoboot is not running in stb VuPlus"
+msgstr "Operacja została anulowana lub NeoBoot nie działa w VuPlus"
+
+msgid ""
+"NeoBoot successfully updated IPTVPlayer.\n"
+"Have fun !!"
+msgstr ""
+"NeoBoot pomyślnie zaktualizował IPTVPlayer.\n"
+"Baw sie dobrze !!"
+
+msgid "Instruction"
+msgstr "Instrukcja"
+
+msgid "Device Manager"
+msgstr "Menadżer urządzeń"
+
+msgid "Info disc"
+msgstr "Dyski"
+
+msgid ""
+"NeoBot checks the connected media.\n"
+"WAIT ...\n"
+"\n"
+"DISCS:"
+msgstr ""
+"NeoBoot sprawdza podłączone nośniki danych.\n"
+"CZEKAJ...\n"
+"DYSKI:"
+
+msgid "    NeoBot - Available media:"
+msgstr "    NeoBoot - Dostępne nośniki danych:"
+
+msgid "After selecting OK start Mounting Manager, option Mount - green\n"
+msgstr "Po wybraniu OK uruchom Menedżera montażu opcję Montowanie - zielony\n"
+
+msgid "Do you want to run the manager to mount the drives correctly ?\n"
+msgstr "Czy chcesz uruchomić menadżer, aby poprawnie zamontować dysk i?\n"
+
+msgid "Device Manager encountered an error, disk drives not installed correctly !!!"
+msgstr "Menadżer urządzeń napotkał błąd, dyski nie zostały poprawnie zainstalowane !!!"
+
+msgid ""
+"\n"
+" ... q(-_-)p ...\n"
+"NeoBot to function properly need additional packages.\n"
+"Select Yes and wait ...\n"
+"Proces installation may take a few moments ...\n"
+"Install ?"
+msgstr ""
+"\n"
+" ... q(-_-)p ...\n"
+"NeoBoot do prawidłowego działania potrzebuje dodatkowych pakietów. \n"
+"Wybierz opcję Tak i poczekaj .... \n"
+"Instalacja procesu może zająć kilka chwil ... \n"
+"Zainstalować ?"
+
+msgid "Installing packages ..."
+msgstr "Instalowanie pakietów..."
+
+msgid "Installation operation canceled. This is not a vuplus box !!!"
+msgstr "Operacja instalacji została anulowana. To nie jest odbiornik vuplus!!!"
+
+msgid "Canceled ... NeoBoot will not work properly !!! NeoBoot works only on VuPlus box, Ultimo4k, Solo4k, Uno4k !!!"
+msgstr "Anulowano... NeoBoot nie będzie działał poprawnie!!! NeoBoot działa tylko na tunerach VuPlus !!!"
+
+msgid "The download neoboot update."
+msgstr "Pobierz aktualizację NeoBoota."
+
+msgid "Installation"
+msgstr "Instalacja"
+
+msgid "Version update: "
+msgstr "Wersja aktualizacji: "
+
+msgid "NeoBoot version: "
+msgstr "Wersja Neoboota: "
+
+msgid "WARNING !!! First, mount the device."
+msgstr "OSTRZEŻENIE !!! Najpierw zamontuj urządzenie."
+
+msgid ""
+"Here is the list of mounted devices in Your STB\n"
+"Please choose a device where You would like to install NeoBoot"
+msgstr ""
+"Oto lista podłączonych urządzeń w Twoim odbiorniku\n"
+"Proszę wybrać urządzenie, na którym chciałbyś zainstalować NeoBoota"
+
+msgid "Tools Neoboot"
+msgstr "Narzędzia NeoBoota"
+
+msgid "No file location NeoBot, do re-install the plugin."
+msgstr "Brak lokalizacji pliku NeoBoota, ponownie zainstaluj wtyczkę."
+
+msgid ""
+"  Enigma2\n"
+"\n"
+"During the entire installation process does not restart the receiver !!!\n"
+"\n"
+msgstr ""
+"  Enigma2\n"
+"\n"
+"Podczas całego procesu instalacji nie restartuj odbiornika !!!\n"
+"\n"
+
+msgid "NeoBoot Ver. updates     "
+msgstr "NeoBoot wer. aktualizacji     "
+
+msgid "NeoBoot Ver. updates    "
+msgstr "NeoBoot wer. aktualizacji    "
+
+msgid "Ver. updates    "
+msgstr "Wer.aktualizacji    "
+
+msgid ""
+"2. NeoBot is fully automated\n"
+"\n"
+msgstr ""
+"2.NeoBoot jest w pełni zautomatyzowany\n"
+"\n"
+
+msgid ""
+"For proper operation NeoBota type device is required USB stick or HDD, formatted on your system files Linux ext3 or ext4..\n"
+"\n"
+msgstr ""
+"Dla prawidłowego działania NeoBota jest wymagana pamięci usb lub hdd, sformatowana w systemie plików Linux ext3 lub ext4...\n"
+"\n"
+
+msgid ""
+"1. If you do not have a media formatted with the ext3 or ext4 is open to the Device Manager <Initialize>, select the drive and format it.\n"
+"\n"
+msgstr ""
+"1.Jeśli nie masz nośnika sformatowanego w ext3 lub ext4, otwórz menadżera urządzeń <Inicjuj>, wybierz dysk i sformatuj go.\n"
+"\n"
+
+msgid ""
+"2. Go to the device manager and install correctly hdd and usb ...\n"
+"\n"
+msgstr ""
+"2.Przejdź do menedżera urządzeń i zainstaluj poprawnie hdd i usb ...\n"
+"\n"
+
+msgid ""
+"3. Install NeoBota on the selected device.\n"
+"\n"
+msgstr ""
+"3.Zainstaluj NeoBota na wybranym urządzeniu.\n"
+"\n"
+
+msgid ""
+"4. Install the needed packages...\n"
+"\n"
+msgstr ""
+"4.Zainstaluj potrzebne pakiety...\n"
+"\n"
+
+msgid ""
+"5. For proper installation XenoBota receiver must be connected to the Internet.\n"
+"\n"
+msgstr ""
+"5. Dla prawidłowego montażu XenoBota odbiornik musi być podłączony do Internet.\n"
+"\n"
+
+msgid ""
+"6. In the event of a problem with the installation cancel and  inform the author of the plug of a problem.\n"
+"\n"
+msgstr ""
+"6.W razie problemów z instalacją anuluj i poinformuj autora wtyczki o problemie.\n"
+"\n"
+
+msgid "NeoBoot Ver. "
+msgstr "NeoBoot wer. "
+
+msgid "Have fun !!!"
+msgstr "Baw się dobrze !!!"
+
+msgid "Remove NeoBoot of STB"
+msgstr "Usuwanie NeoBoota"
+
+msgid ""
+"1. Requirements: For proper operation of the device NeoBota are required USB stick or HDD.\n"
+"\n"
+msgstr ""
+"1. Wymagania: Do prawidłowego działania urządzenia NeoBoota wymagane są pamięć usb lub hdd.\n"
+"\n"
+
+msgid ""
+"3. To install a new image in MultiBocie should be sent by FTP software file compressed in ZIP or NIF to the folder: \n"
+"/media/neoboot/ImagesUpload and remote control plugin NeoBoot use the green button <Installation>\n"
+"\n"
+msgstr ""
+"3.Aby zainstalować nowe obrazy w NeoBoocie należy przesłać przez protokół FTP plik oprogramowania skompresowany w ZIP lub NFI do folderu:\n"
+"/media/neoboot/ImagesUpload i z pilota w NeoBoocie użyć zielonego przycisku <Instalacja>\n"
+"\n"
+
+msgid ""
+"4. For proper installation and operation of additional image multiboot, use only the image intended for your receiver. !!!\n"
+"\n"
+msgstr ""
+"4.Do poprawniej instalacji i dzałania dodatkowego obrazu w NeoBoocie, należy używać tylko obrazów przeznaczonych dla Twojego odbiornika. !!!\n"
+"\n"
+
+msgid ""
+"5. By installing the multiboot images of a different type than for your model STB DOING THIS AT YOUR OWN RISK !!!\n"
+"\n"
+msgstr ""
+"5.Instalując w NeoBoocie obrazy innego typu, niż dla Twojego modelu odbiornika, ROBISZ TO NA WŁASNE RYZYKO!!!\n"
+"\n"
+
+msgid ""
+"6. The installed to multiboot images, it is not indicated update to a newer version.\n"
+"\n"
+msgstr ""
+"6.W zainstalowanych na Meoboocie obrazach, nie jest wskazana aktualizacja do nowszej wersji.\n"
+"\n"
+
+msgid ""
+"The authors plug NeoBot not liable for damage a receiver, NeoBoota incorrect use or installation of unauthorized additions or images.!!!\n"
+"\n"
+msgstr ""
+"Autorzy wtyczki NeoBoota nie ponoszą odpowiedzialności za uszkodzenie odbiornika, niepoprawnym używaniem NeoBoota lub instalacją niedozwolonych dodatków,obrazów\n"
+"\n"
+
+msgid ""
+"Are you sure you want to completely remove NeoBoota of your image?\n"
+"\n"
+"If you choose so all directories NeoBoota will be removed.\n"
+"A restore the original image settings Flash."
+msgstr ""
+"Czy na pewno chcesz całkowicie usunć NeoBoota z Twojego odbiornika ?\n"
+"\n"
+"Jeśli wybierzesz tak wszystkie katalogi NeoBoota zostaną usunięte.\n"
+"Zostaną przywrócone oryginalne ustawienia obrazu flesza."
+
+msgid "Delete the selected image - "
+msgstr "Usunąć wybrany obraz - "
+
+msgid "Choose what you want to do !"
+msgstr "Wybierz co chcesz zrobić !"
+
+msgid ""
+"\n"
+"Delete ?"
+msgstr ""
+"\n"
+"Usunąć ?"
+
+msgid ""
+"NeoBot was removed !!! \n"
+"The changes will be visible only after complete restart of the receiver."
+msgstr ""
+"NeoBoot został usunięty !!! \n"
+"Zmiany będą widoczne dopiero po ponownym uruchomieniu odbiornika."
+
+msgid "Removed successfully."
+msgstr "Pomyślnie usunięto."
+
+msgid "Recovering setting....\n"
+msgstr "Przywracanie ustawień .....\n"
+
+msgid "Update neoboot in all images ?"
+msgstr "Zaktualizować Neoboota na wszystkich obrazach ?"
+
+msgid ""
+"NeoBoot: Upgrading in progress\n"
+"Please wait..."
+msgstr ""
+"NeoBoot: Trwa aktualizowanie\n"
+"Proszę czekać ..."
+
+msgid ""
+"[NeoBoot] For proper operation of the image blackhole in neobot, you need to install additional packages. \n"
+"\n"
+" Install now ?"
+msgstr ""
+"Aby zapewnić prawidłowe działanie BlackHole w Neoboocie, należy zainstalować dodatkowe pakiety.\n"
+"\n"
+"Teraz zainstalować ?"
+
+msgid "Cancelled ... [meoboot] detected no file vmlinuz.gz. You can not run image BlackHole \\ nImage BlackHole without the module will not be work properly !!!"
+msgstr ""
+"Anulowano... [NeoBoot] nie wykrył pliku vmlinux.gz. Nie można uruchomć obrazu BlackHole \n"
+"Obraz BlackHole bez modułu nie będzie działać poprawnie!!!"
+
+msgid ""
+"Meoboot detected that you want to run the image blackhole. \\Warning!!!  - BlackHole not run without the boot manager !!!\n"
+"If you are running an image blackhole not converted to another during the restart from the boot manager !!!\n"
+"Start the selected image now ?"
+msgstr ""
+"NeoBoot wykrył że chcesz uruchomić obraz BlackHole.\n"
+"Ostrzeżenie!!! - BlackHole należy uruchamiać bez menadżer rozruchu!!!\n"
+"Jeśli masz uruchomiony obraz BlackHole nie zmieniaj na inny podczas restartu z poziomu menadżer rozruchu!!!\n"
+"Teraz uruchomić wybrany obraz?"
+
+msgid "Meoboot detected that is not installed on the model VuPlus, you can not run an image BlackHole !!!"
+msgstr "NeoBoot wykrył że nie jest zainstalowany na modelu VuPlus, nie można uruchomić obrazu BlackHole !!!"
+
+msgid ""
+"NeoBoot has detected that it is running image blackhole.\n"
+"To change the image should return to Flash !!! \n"
+"\n"
+"Start selected image now ?"
+msgstr ""
+"NeoBoot wykrył że jest uruchomiony obraz BlackHole.\n"
+"By zmienić obraz należy powróć do Flash !!!\n"
+"\n"
+"Teraz uruchomić wybrany obraz ?"
+
+msgid "Download image..."
+msgstr "Pobieranie obrazu..."
+
+msgid "Not Detected kernel-module-nandsim, install ?"
+msgstr "Nie wykryto kernel-module-nandsim, zainstalować ?"
+
+msgid ""
+"The installation has encountered an error !!!.\n"
+"This may be no connection to the server or the link has expired.\n"
+"When installing a new image use options ubi_reader..."
+msgstr ""
+"Podczas instalacji wystąpił błąd !!!..\n"
+"Powodem może być brak połączenia z serwerem lub połączenie wygasło.\n"
+"Podczas instalowania nowego obrazu użyj opcji ubi_reader ..."
+
+msgid "Cancelled ... Image BlackHole without the module will not work properly !!!"
+msgstr "Anulowane ... Obraz BlackHole bez modułu nie będzie działać poprawnie !!!"
+
+msgid "Package installation is complete. You can test image BlackHole ..."
+msgstr "Instalacja pakietu została zakończona. Możesz przetestować obraz BlackHole ..."
+
+msgid "Cancelled ... neoboot without the module will not work properly !!!"
+msgstr "Anulowane ... Neoboot bez modułu nie będzie działał poprawnie !!!"
+
+msgid "Package installation is complete. You can test new image."
+msgstr "Instalacja pakietu została zakończona. Możesz przetestować nowy obraz."
+
+msgid "Cancelled"
+msgstr "Anulowano"
+
+msgid "Canceled start off the image ..."
+msgstr "Anulowano start obrazu..."
+
+msgid "Exit"
+msgstr "Wyjście"
+
+msgid "Start the device manager ?"
+msgstr "Uruchomić menadżera urządzeń ?"
+
+msgid "Select OK to run the image."
+msgstr "Wybierz OK by uruchomić obraz."
+
+msgid "Use options without the boot manager."
+msgstr "Użyj opcji bez menadżer rozruchu."
+
+msgid "Use options with the boot manager."
+msgstr "Użyj opcji z menadżer rozruchu (zalecane)"
+
+msgid "Use the next start."
+msgstr "Użyj następnego uruchomienia."
+
+msgid "Use nandsim"
+msgstr "Użyj nandsim (zalecane)"
+
+msgid "Use  ubi_reader"
+msgstr "Użyj  ubi_reader"
+
+msgid "Unpack the image tar.bz2 4K"
+msgstr "Rozpakuj obraz tar.bz2 4K"
+
+msgid "Unpack the image - no change."
+msgstr "Rozpakuj obraz - bez zmian."
+
+msgid "Choose option to extract image"
+msgstr "Wybierz opcję wyodrębnienia obrazu"
+
+msgid "Installing multiple images"
+msgstr "Instalowanie wielu obrazów"
+
+msgid ""
+"[NeoBoot]\n"
+"We detected that you want to install more than 14 images, be sure to use options without the boot manager.\n"
+"\n"
+msgstr ""
+"[NeoBoot]\n"
+"Chcesz zainstalować więcej niż 14 obrazów, pamiętaj by używać opcji bez menadżer rozruchu podczas uruchamiania obrazu w NeoBoot.\n"
+"\n"
+
+msgid "Do you want to install ?"
+msgstr "Czy chcesz zainstalować ?"
+
+msgid "Sorry there is not enought available space on your device. You need at least 800 Mb free to install a new image."
+msgstr "Niestety, na Twoim urządzeniu jest za mało wolnego miejsca. Aby zainstalować nowy obraz, potrzebujesz przynajmniej 800 Mb wolnego miejsca."
+
+msgid "Downloading available only from the image Flash."
+msgstr "Pobieranie dostępne tylko z flesza."
+
+msgid "Information available only when running Flash."
+msgstr "Informacje dostępne tylko podczas uruchamiania z flesza."
+
+msgid "Sorry, NeoBoot can installed or upgraded only when booted from Flash."
+msgstr "Przepraszamy, NeoBoota można zainstalować lub uaktualnić tylko po uruchomieniu z flesza."
+
+msgid "Delete the selected image  :"
+msgstr "Usunąć wybrany obraz  :"
+
+msgid "More options"
+msgstr "Więcej opcji"
+
+msgid "NeoBot - First use the Device Manager and mount the drives correctly !!!"
+msgstr "NeoBot - Najpierw użyj menadżer urządzeń i zamontuj poprawnie dyski !!!"
+
+msgid ""
+"\n"
+"[NeoBoot] The installation image is ready.\n"
+"Return to test the installed image.\n"
+"Press EXIT!"
+msgstr ""
+"\n"
+"[NeoBoot]Instalacja obrazu jest gotowa.Powrót do przetestowania zainstalowanego obrazu.\n"
+"Naciśnij EXIT!"
+
+msgid "[NeoBoot]From the installation, you can not run an image BlackHole."
+msgstr "Z poziomu instalacji, nie można uruchomić obrazu BlackHole."
+
+msgid "Updated unnecessary, you have the latest version. Please try again later."
+msgstr "Aktualizacja niepotrzebna, masz najnowszą wersję. Spróbuj ponownie później."
+
+msgid "MOUNTING. / Restart image.'"
+msgstr "MONTOWANIE./Ponownie uruchom obraz '"
+
+msgid ""
+"\n"
+"Completed assembly of disks.\n"
+"To save the setting, switch the STB in deep standby !!!\n"
+"Restart ?"
+msgstr ""
+"\n"
+"Zakończono montowanie dysków.\n"
+"Aby zapisać ustawienie, przełącz odbiornik w głęboką gotowość !!! \n"
+"Zrestartować ?"
+
+msgid "Please, wait...."
+msgstr "Proszę czekać...."
+
+msgid "Continues mounting equipment..."
+msgstr "Kontynuuje montaż urządzeń ..."
+
+msgid "Installing a proven and successful !!!!"
+msgstr "Instalowanie sprawdzone i skuteczne !!!"
+
+msgid "The selected image starts after you hard reboot tuner."
+msgstr "Wybrany obraz uruchomi się po twardym restarcie odbiornika."
+
+msgid "Welcome to the world of Python"
+msgstr "Witamy w świecie Pythona"
+
+msgid "Wait please while scanning for devices..."
+msgstr "Proszę czekać, podczas skanowania urządzeń ..."
+
+msgid "Unfortunately, at the moment not found an update, try again later."
+msgstr "Niestety, w tej chwili nie znaleziono aktualizacji, spróbuj ponownie później."
+
+msgid "Initialize"
+msgstr "Formatowanie"
+
+msgid "Mount Manager."
+msgstr "Menadżer montowania."
+
+msgid "SetupMounts"
+msgstr "Ustawienia montowania"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Memory disc:"
+msgstr "Pamięć dysku:"
+
+msgid ""
+"Completed update NeoBoot. You need to restart the E2 !!!\n"
+"Restart now ?"
+msgstr ""
+"Zakończono aktualizację NeoBoota. \n"
+"Musisz ponownie uruchomić E2!!! \n"
+"Uruchomić ponownie teraz ?"
+
+msgid "Copy the boxbranding  ?"
+msgstr "Skopiować plik boxbranding  ?"
+
+msgid ""
+"Completed assembly of disks.\n"
+"Return to installation ?"
+msgstr ""
+"Zakończono montaż dysków.\n"
+"Wrócić do instalacji ?"
+
+msgid "Return to installation..."
+msgstr "Powrót do instalacji Neoboota..."
+
+msgid "Repair FTP ? (Recommended only other image if it does not work.)"
+msgstr "Naprawić połączenie FTP ? (Zalecane dla innych obrazów)"
+
+msgid "Copy the extensions plugins  ?"
+msgstr "Skopiować wtyczki rozszerzeń ?"
+
+msgid "Copy the system plugins ?"
+msgstr "Skopiować systemowe wtyczki ?"
+
+msgid "Deep standby"
+msgstr "Głęboki tryb gotowości"
+
+msgid "Start with change kernel - Recommended"
+msgstr "Zacznij od zmiany jądra - Zalecane"
+
+msgid "Copy Settings to the new Image"
+msgstr "Skopiować ustawień do nowego obrazu - Nie zalecane"
+
+msgid "Boot new Image directly ?"
+msgstr "Uruchomić instalowany obraz ?"
+
+msgid "Delete Image zip after Install ?"
+msgstr "Usunąć obraz zip po instalacji ?"
+
+msgid "Remove password ftp for the new Image ?"
+msgstr "Usunąć hasło ftp dla nowego obrazu ?"
+
+msgid "OK Start image..."
+msgstr "!!! NEOBOOT START OBRAZU !!!."
+
+msgid "Copy network settings LAN-WLAN ?"
+msgstr "Skopiować ustawienia sieciowe LAN-WLAN ?"
+
+msgid "There is no NeoBootUpdate.tar.gz to install.\n"
+msgstr "Nie ma pliku w NeoBootUpdate do zainstalowania !\n"
+
+msgid "The update file is available at http://all-forum.cba.pl\n"
+msgstr "Plik aktualizacji dostepny pod adresem http://all-forum.cba.pl\n"
+
+msgid "Please name NeoBootUpdate.tar.gz for the downloaded file and upload to / tmp and try again.\n"
+msgstr "Prosze, podaj nazwę NeoBootUpdate.tar.gz dla pobranego pliku,prześlij do lokalizacji /tmp i spróbuj ponownie...\n"
+
+msgid "Copy the kernel of the installed system (recommended ?"
+msgstr "Skopiować plik kernel.bin instalowanego systemu (zalecane ) ?"
+
+msgid "Copy files from Flash to the installed image ?"
+msgstr "Skopiować pliki z Flasha do instalowanego obraz ?"
+
+msgid "Copy settings SoftCam ?"
+msgstr "Skopiować ustawienia SoftCam ?"
+
+msgid "Path BlackHole ? (Not recommended for VuPlus)"
+msgstr "Ścieżka BlackHole ?(Nie zalecana dla VuPlus)"
