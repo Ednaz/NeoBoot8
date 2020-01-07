@@ -6,7 +6,7 @@ if `grep -q 'osd.language=pl_PL' </etc/enigma2/settings`; then
   PL=1
 fi
 [ -e /tmp/neoboot.zip ] && rm -f /tmp/neoboot.zip
-[ -e /tmp/NeoBoot_VuUltimo4K-master ] && rm -rf /tmp/NeoBoot_VuUltimo4K-master
+[ -e /tmp/neoboot-master ] && rm -rf /tmp/neoboot-master
 [ $PL ] && echo "Pobieranie archiwum..." || echo "Downloading archive file..."
 URL='https://github.com/gutosie/NeoBoot_VuUltimo4K/archive/master.zip'
 curl -kLs $URL  -o /tmp/neoboot.zip
@@ -38,6 +38,14 @@ if [ $PL ] ; then
   echo ""
 else
   echo ""
+  echo "#####################################################"
+  echo "#          NEOBOOT INSTALLED SUCCESSFULLY           #"
+  echo "#####################################################"
+  echo "#             PLEASE RESTART YOUR STB               #"
+  echo "#####################################################"
+  echo ""
+fi
+exit 0
   echo "#####################################################"
   echo "#          NEOBOOT INSTALLED SUCCESSFULLY           #"
   echo "#####################################################"
