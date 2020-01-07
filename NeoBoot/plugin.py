@@ -1077,13 +1077,12 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
         from Plugins.Extensions.NeoBoot.files.tools import ReinstallKernel
         self.session.open(ReinstallKernel)
 
-    def neoboot_update(self):
-                self.messagebox = self.session.open(MessageBox, _('Updated unnecessary, you have the latest version. Please try again later.'), MessageBox.TYPE_INFO, 8)
-                self.close()
-    
-    
 ##/////NA CZAS TESTU UPDATE ZATRZYMANE\\\\\####################################
-    def STOPneoboot_update(self):
+#    def neoboot_update(self):
+#                self.messagebox = self.session.open(MessageBox, _('Updated unnecessary, you have the latest version. Please try again later.'), MessageBox.TYPE_INFO, 8)
+#                self.close()
+    
+    def neoboot_update(self):
 		
         if fileExists('/.multinfo'):
             mess = _('Downloading available only from the image Flash.')
