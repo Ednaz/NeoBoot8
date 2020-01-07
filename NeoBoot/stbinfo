@@ -15,9 +15,6 @@ cat /proc/partitions
 cat /var/lib/opkg/info/kernel-image*.postinst
 
 
-
-
-
 Ultimo4k            :    7444s 
 Solo4k              :    7376  
 Zero 4K             :    72604  
@@ -56,4 +53,5 @@ atemio6000          :    bcm7362
 gbquad4k            :    bcm7252s    # cat /proc/stb/info/model : gbquad4k #  # cat /etc/hostname : gbquad4k # cat /proc/cmdline root=/dev/mmcblk0p5 rootwait rw rootflags=data=journal libata.force=1:3.0G,2:3.0G,3:3.0G coherent_poll=2M vmalloc=525m bmem=529m@491m bmem=608m@2464m
 
 ustym4kpro: cat /proc/stb/info/chipset 3798mv200 root@ustym4kpro: cat /etc/hostname ustym4kpro
- 
+
+GI ET-11000 4K      :    bcm7251                                  cat /etc/hostname et1x000

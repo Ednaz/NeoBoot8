@@ -138,9 +138,14 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/osmini/kernel.bin ' + media_target + '/boot/' + getBoxHostName() + '.vmlinux.gz' + dev_null)        
                 os.system('echo "Skopiowano kernel.bin Edision OS MINI. Typ stb - MIPS"')
 #arm octagon
-            elif getCPUSoC() == 'bcm7251' or getBoxHostName() == 'sf4008':
+            elif getBoxHostName() == 'sf4008':  #getCPUSoC() == 'bcm7251' or
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM Octagon."')   
+
+#arm GI ET-11000 4K et1x000
+            elif getBoxHostName() == 'et1x000': #getCPUSoC() == 'bcm7251' or
+                os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
+                os.system('echo "Skopiowano kernel.bin STB-ARM GI ET-11000 4K."')
 
 #arm Zgemma h7
             elif getCPUSoC() == 'bcm7251s' or getBoxHostName() == 'h7':
@@ -617,7 +622,9 @@ def RemoveUnpackDirs():
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/xp1000 ') 
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dinobot '):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/dinobot ') 
-                                                   
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000 '):
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/et1x000 ')                                                   
+
     os.system('echo "Remove Unpack Dirs..."')
 
 
@@ -1139,6 +1146,11 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             os.system('echo "Instalacja systemu ustym4kpro w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/uclan/ustym4kpro; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/uclan/ustym4kpro/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
+        elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000'):
+            os.system('echo "Instalacja systemu GI ET-11000 4K w toku..."')
+            cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/et1x000; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/et1x000/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
+            rc = os.system(cmd)
+
 
         else:
             os.system('echo "NeoBoot wykrył dłąd!!! Prawdopodobnie brak pliku instalacyjnego."')
