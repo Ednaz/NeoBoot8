@@ -142,10 +142,15 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM Octagon."')   
 
-#arm GI ET-11000 4K et1x000
+#arm Galaxy Innvations ET-11000 4K et1x000
             elif getBoxHostName() == 'et1x000': #getCPUSoC() == 'bcm7251' or
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM GI ET-11000 4K."')
+
+#arm  Ariva 4K Combo
+            elif getBoxHostName() == 'et1x000': #getCPUSoC() == 'bcm7251' or
+                os.system('mv ' + getNeoLocation() + 'ImagesUpload/e2/update/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
+                os.system('echo "Skopiowano kernel.bin STB-ARM Ariva 4K Combo."')
 
 #arm Zgemma h7
             elif getCPUSoC() == 'bcm7251s' or getBoxHostName() == 'h7':
@@ -231,8 +236,8 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 rc = os.system(cmd)
             cmd = 'cp -r /etc/fstab %s/ImageBoot/%s/etc/fstab' % (media, target)
             rc = os.system(cmd)
-            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
-            rc = os.system(cmd)
+#            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
+#            rc = os.system(cmd)
 
         if LanWlan == 'True':
             if os.path.exists('%s/ImageBoot/%s/etc/vtiversion.info' % (media, target)):
@@ -573,10 +578,6 @@ def RemoveUnpackDirs():
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/vuplus')
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/sf4008'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/sf4008')
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/octagon/sf8008'):          
-        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/octagon; rm -r ' + getNeoLocation() + 'ImagesUpload/octagon')                                          
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):          
-        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/hd60; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/hd60; rm -r ' + getNeoLocation() + 'ImagesUpload/hd60')                                          
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/osmio4k'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/osmio4k')        
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dm900'):
@@ -596,15 +597,7 @@ def RemoveUnpackDirs():
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/*.nfi'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/*.nfi')
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/zgemma'):
-        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/zgemma')
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/h7'):
-        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/h7; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/h7')                                                                                                
-        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/h7')  
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/h9'):
-        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/h9; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/h9')                                                                                                
-        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/h9')                      
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/uclan'):
-        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/uclan')                                                                                                
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/zgemma')                                                                                               
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/uclan') 
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/formuler1'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/formuler1')
@@ -622,8 +615,26 @@ def RemoveUnpackDirs():
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/xp1000 ') 
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dinobot '):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/dinobot ') 
-    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000 '):
-        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/et1x000 ')                                                   
+
+
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e2/update'):
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/e2')                                                                                          
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000'):
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/et1x000') 
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/vuplus')
+
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/octagon/sf8008'):          
+        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/octagon; rm -r ' + getNeoLocation() + 'ImagesUpload/octagon')                                          
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):          
+        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/hd60; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/hd60; rm -r ' + getNeoLocation() + 'ImagesUpload/hd60')                                          
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/h7'):
+        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/h7; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/h7')                                                                                                
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/h7')  
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/h9'):
+        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/bootargs.bin ' + getNeoLocation() + 'ImagesUpload/h9; mv ' + getNeoLocation() + 'ImagesUpload/fastboot.bin ' + getNeoLocation() + 'ImagesUpload/h9')                                                                                                
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/h9')                      
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/uclan'):
+        rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/uclan') 
 
     os.system('echo "Remove Unpack Dirs..."')
 
@@ -1150,8 +1161,10 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             os.system('echo "Instalacja systemu GI ET-11000 4K w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/et1x000; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/et1x000/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
-
-
+        elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e2/update'):
+            os.system('echo "Instalacja systemu Ferguson Ariva 4K Combo w toku..."')
+            cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/e2/update; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/e2/update/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
+            rc = os.system(cmd)
         else:
             os.system('echo "NeoBoot wykrył dłąd!!! Prawdopodobnie brak pliku instalacyjnego."')
 

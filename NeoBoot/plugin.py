@@ -47,7 +47,7 @@ import time
 # warranty, use at YOUR own risk.
 
 PLUGINVERSION = '8.00'
-UPDATEVERSION = '8.02'
+UPDATEVERSION = '8.03'
 
 def Freespace(dev):
     statdev = os.statvfs(dev)
@@ -1399,7 +1399,15 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
             self.session.open(MessageBox, _('Removing canceled!'), MessageBox.TYPE_INFO)
 
     def ImageInstall(self):		
-        if not fileExists('/.multinfo'):                                                                                                                                                                                                                                                 
+        if fileExists('/.multinfo'):
+                    message = _('Instalacja nowego oprogramowania do neoboot, zalecane tylko z poziomu Flash!!!\n---Kontynuowac ?---')
+                    ybox = self.session.openWithCallback(self.installation_image, MessageBox, message, MessageBox.TYPE_YESNO)
+                    ybox.setTitle(_('Installation with risk '))
+        else:
+                self.installation_image()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+    def installation_image(self, yesno):		
+        if yesno:
             if getCPUSoC() or getBoxHostName() or getTunerModel() == ['zgemmah9s',
              'osmio4k',
              'bcm7252s',
@@ -1441,12 +1449,12 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
              'h3']:                   
                 self.extractImage()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
             else:
-                self.messagebox = self.session.open(MessageBox, _('Nie wykryto odpowiedniego STB do instalacji !!!!'), MessageBox.TYPE_INFO, 8)
+                self.messagebox = self.session.open(MessageBox, _('Tuner nie jest wspierany przez NeoBoota.\nSkontaktuj sie z autorem.\nNie wykryto odpowiedniego STB do instalacji !!!!'), MessageBox.TYPE_INFO, 8)
                 self.close()
         else:
-                self.messagebox = self.session.open(MessageBox, _('Instalacja tylko z poziomu systemu flash.'), MessageBox.TYPE_INFO, 8)
+                self.messagebox = self.session.open(MessageBox, _('Zaleca sie instalacje nowego oprogramowania tylko z poziomu systemu flash.\nPowroc do flash by instalowac nowe image.'), MessageBox.TYPE_INFO, 8)
                 self.close()
-
+            
     def extractImage(self):		
         images = False
         if fileExists('%sImageBoot/.without_copying' % getNeoLocation() ):
