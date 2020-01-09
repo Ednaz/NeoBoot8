@@ -1156,16 +1156,13 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
             os.system('rm -f /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ver.txt')
             self.session.open(MessageBox, _('The update has been canceled.'), MessageBox.TYPE_INFO, 8)
 
-    def restartGUI(self, answer):
-		
+    def restartGUI(self, answer):		
         if answer is True:
             self.session.open(TryQuitMainloop, 3)
         else:
             self.close()
 
-    def installMedia(self):
-		
-		
+    def installMedia(self):				
         images = False
         myimages = os.listdir('%sImagesUpload' % getNeoLocation() )
         print myimages
@@ -1404,7 +1401,10 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
                     ybox = self.session.openWithCallback(self.installation_image, MessageBox, message, MessageBox.TYPE_YESNO)
                     ybox.setTitle(_('Installation with risk '))
         else:
-                self.installation_image()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+                    message = _('Instalacja z poziomu Flash!!!\n---Kontynuowac ?---')
+                    ybox = self.session.openWithCallback(self.installation_image, MessageBox, message, MessageBox.TYPE_YESNO)
+                    ybox.setTitle(_('Installation new image. '))
+#            self.installation_image()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
     def installation_image(self, yesno):		
         if yesno:
@@ -1452,7 +1452,7 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
                 self.messagebox = self.session.open(MessageBox, _('Tuner nie jest wspierany przez NeoBoota.\nSkontaktuj sie z autorem.\nNie wykryto odpowiedniego STB do instalacji !!!!'), MessageBox.TYPE_INFO, 8)
                 self.close()
         else:
-                self.messagebox = self.session.open(MessageBox, _('Zaleca sie instalacje nowego oprogramowania tylko z poziomu systemu flash.\nPowroc do flash by instalowac nowe image.'), MessageBox.TYPE_INFO, 8)
+                self.messagebox = self.session.open(MessageBox, _('Zaleca sie instalacje nowego oprogramowania tylko z poziomu systemu flash.\n---NEOBOOT EXIT---'), MessageBox.TYPE_INFO, 10)
                 self.close()
             
     def extractImage(self):		
