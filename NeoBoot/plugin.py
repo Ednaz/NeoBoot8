@@ -1533,11 +1533,11 @@ def checkimage():
 
 def main(session, **kwargs):
 	
-    if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo.sh'):
+    if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom'):
         pass
     else:
         if not fileExists('%sImageBoot/.version' % getNeoLocation()):
-            os.system('mkdir -p %s; sync; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo.sh; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo.sh  -i' % getNeoLocation())
+            os.system('mkdir -p %s; sync; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom' % getNeoLocation())
 
     version = 0           
     if fileExists('%sImageBoot/.version' % getNeoLocation()):
