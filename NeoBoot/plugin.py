@@ -47,7 +47,7 @@ import time
 # warranty, use at YOUR own risk.
 
 PLUGINVERSION = '8.00'
-UPDATEVERSION = '8.03'
+UPDATEVERSION = '8.04'
 
 def Freespace(dev):
     statdev = os.statvfs(dev)
@@ -608,7 +608,8 @@ class NeoBootInstallation(Screen):
             elif getCPUtype() == 'ARMv7' and getBoxHostName() !=  'ustym4kpro':
                 if getCPUSoC() == '7278' or getBoxHostName() == 'vuduo4k':
                         os.system('cd /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/' )
-                        os.system('cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarm /sbin/neoinitarm; cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarmvu /sbin/neoinitarmvu; mv /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target/duo4k_run.py /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/run.py; cd')  
+#                        os.system('cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarm /sbin/neoinitarm; cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarmvu /sbin/neoinitarmvu; mv /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target/duo4k_run.py /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/run.py; cd')  
+                        os.system('cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarm /sbin/neoinitarm; cp -Rf /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarmvuDuo4k /sbin/neoinitarmvu; mv /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target/duo4k_run.py /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/run.py; cd')  
                         os.system('chmod 755 /sbin/neoinitarm; chmod 755 /sbin/neoinitarmvu')                  
                         os.system('dd if=/dev/mmcblk0p6 of=%sImagesUpload/.kernel/flash-kernel-%s.bin' % (getNeoLocation(), getBoxHostName()))
                         os.system('mv /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target/vuDuo4Kmmcblk0p6.sh /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/kernel.sh; cd')                         

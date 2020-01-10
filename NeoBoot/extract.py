@@ -353,8 +353,12 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 if not os.path.exists('%s/ImageBoot/%s/etc/enigma2' % (media, target)):
                     cmd = 'mkdir -p %s/ImageBoot/%s/etc/enigma2' % (media, target)
                     rc = os.system(cmd)
-                cmd = 'cp /etc/enigma2/settings %s/ImageBoot/%s/etc/enigma2' % (media, target)
+                cmd = 'cp /etc/enigma2/mp_2s4p %s/ImageBoot/%s/etc/enigma2' % (media, target)
                 rc = os.system(cmd)
+                cmd = 'cp /etc/enigma2/mp_config %s/ImageBoot/%s/etc/enigma2' % (media, target)
+                rc = os.system(cmd)
+                cmd = 'cp /etc/enigma2/mp_pluginliste %s/ImageBoot/%s/etc/enigma2' % (media, target)
+                rc = os.system(cmd)                                
                 os.system('echo "Skopiowano MediaPortal z ustawieniami systemowymi."')
             elif not os.path.exists('/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal'):                    
                 os.system('echo "MediaPortal not found."')
