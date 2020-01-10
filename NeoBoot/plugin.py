@@ -47,7 +47,7 @@ import time
 # warranty, use at YOUR own risk.
 
 PLUGINVERSION = '8.00'
-UPDATEVERSION = '8.05'
+UPDATEVERSION = '8.06'
 
 def Freespace(dev):
     statdev = os.statvfs(dev)
@@ -720,7 +720,7 @@ class NeoBootInstallation(Screen):
                                                           
             os.system(' ln -sfn ' + getNeoLocation() + 'ImageBoot/.neonextboot /etc/neoimage; chmod 644 ' + getNeoLocation() + 'ImagesUpload/.kernel/*; ln -sfn ' + getNeoLocation() + 'ImageBoot /etc/imageboot; rm -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/kernel.sh ')
 
-            os.system('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; sleep 2; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom')                                    
+            os.system('chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; sleep 2; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom')                                    
                                               
             if os.path.isfile('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location'): 	
                 if getLabelDisck() != 'LABEL=':	
@@ -912,7 +912,7 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
             system('chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo.sh')   
 
         if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom'):
-            os.system('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom')                                    
+            os.system('chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neo_location; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom')                                    
 
 
         if fileExists('/tmp/.init_reboot'):

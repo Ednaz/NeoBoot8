@@ -1097,7 +1097,7 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/rootfs.tar.xz; tar -jJxvf ' + getNeoLocation() + 'ImagesUpload/rootfs.tar.xz -C  ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2'):
-            os.system('echo "Please wait. System installation  HD51 "')
+            os.system('echo "Please wait. System installation AX 4K Box HD51 "')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)         
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):

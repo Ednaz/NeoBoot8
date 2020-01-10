@@ -89,13 +89,43 @@ class InstallImage(Screen, ConfigListScreen):
         self.target = ConfigText(fixed_size=False)
         self.stopenigma = ConfigYesNo(default=False)     
         self.CopyFiles = ConfigYesNo(default=True)
-        self.CopyKernel = ConfigYesNo(default=True)
+        if getCPUtype() == 'ARMv7' and getCPUSoC() or getBoxHostName() == ['7444s', 
+             '7376',                           
+             '7252s',
+             '7278', 
+             '72604',
+             'vuultimo4k'             
+             'vusolo4k',                         
+             'vuuno4k',                          
+             'vuuno4kse',
+             'vuduo4k',
+             'vuzero4k']: 
+            self.CopyKernel = ConfigYesNo(default=True)
+        else:
+            self.CopyKernel = ConfigYesNo(default=False)        
         self.TvList = ConfigYesNo(default=False) 
         self.Montowanie = ConfigYesNo(default=False)         
         self.LanWlan = ConfigYesNo(default=False)
-        self.Sterowniki = ConfigYesNo(default=False)                        
+        if getCPUtype() == 'ARMv7' and getCPUSoC() or getBoxHostName() == ['osmio4k', 
+             'ax60',
+             'sf8008', 
+             'bcm7251',
+             'sf4008',
+             'et1x000',
+             'bcm7251s',
+             'h7',
+             'hi3798mv200'
+             'zgemmah9s',
+             'bcm7252s',
+             'gbquad4k',              
+             'ustym4kpro',
+             '3798mv200'                                       
+             'dm900'] :
+            self.Sterowniki = ConfigYesNo(default=True)
+        else:
+            self.Sterowniki = ConfigYesNo(default=False)                                                
         self.InstallSettings = ConfigYesNo(default=False)        
-        self.ZipDelete = ConfigYesNo(default=False) 
+        self.ZipDelete = ConfigYesNo(default=False)                 
         self.RepairFTP = ConfigYesNo(default=False)
         self.SoftCam = ConfigYesNo(default=False)
         self.MediaPortal = ConfigYesNo(default=False)                                                                             
