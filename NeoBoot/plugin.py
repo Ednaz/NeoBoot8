@@ -47,7 +47,7 @@ import time
 # warranty, use at YOUR own risk.
 
 PLUGINVERSION = '8.00'
-UPDATEVERSION = '8.04'
+UPDATEVERSION = '8.05'
 
 def Freespace(dev):
     statdev = os.statvfs(dev)

@@ -242,21 +242,8 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
 ###########################################################
 
             if os.path.exists('%s/ImageBoot/%s/etc/init.d/udev' % (media, target)):
-                filename = '%s/ImageBoot/%s/etc/init.d/udev'
+                filename = '%s/ImageBoot/%s/etc/init.d/udev' % (media, target)
                 if os.path.exists(filename):
-                    filename2 = filename + '.tmp'
-                    out = open(filename2, 'w')
-                    f = open(filename, 'r')
-                    for line in f.readlines():
-                        if line.find('mount -a') != -1:
-                            line = '\n'
-                        out.write(line)
-
-                    f.close()
-                    out.close()
-                    os.rename(filename2, filename)
-
-
                     filename2 = filename + '.tmp'
                     out = open(filename2, 'w')
                     f = open(filename, 'r')
@@ -269,26 +256,15 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                     out.close()
                     os.rename(filename2, filename)
 
-                    cmd = 'mount -a; echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
+                    cmd = 'echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
+                    rc = os.system(cmd)
+                    cmd = 'echo "exit 0" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
                     rc = os.system(cmd)
 
-            if os.path.exists('%s/ImageBoot/%s/etc/init.d/mdev'% (media, target)):
-                filename = '%s/ImageBoot/%s/etc/init.d/mdev'
-                if os.path.exists(filename):
-
-                    filename2 = filename + '.tmp'
-                    out = open(filename2, 'w')
-                    f = open(filename, 'r')
-                    for line in f.readlines():
-                        if line.find('mount -a') != -1:
-                            line = '\n'
-                        out.write(line)
-
-                    f.close()
-                    out.close()
-                    os.rename(filename2, filename)
-                    
-                    cmd = 'mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
+            if os.path.exists('%s/ImageBoot/%s/etc/init.d/mdev'% (media, target)):                    
+                    cmd = 'echo " " >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
+                    rc = os.system(cmd)
+                    cmd = 'echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom" >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
                     rc = os.system(cmd)
 
         if LanWlan == 'True':
@@ -606,8 +582,7 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
     os.system('cp ' + getNeoLocation() + 'ImageBoot/.neonextboot ' + getNeoLocation() + 'ImageBoot/%s/.multinfo' % target)
     out = open(mediahome + '.neonextboot', 'w')
     out.write('Flash')
-    out.close()       
-    os.system('echo "A few more moments and its over. "')                                                                       
+    out.close()                                                                             
     if '.tar.xz' not in source and not os.path.exists('' + getNeoLocation() + '/ImageBoot/%s/etc/issue' %  target):
             os.system('echo ""; echo "Nie zainstalowano systemu ! Powodem b\xc5\x82\xc4\x99du instalacji mo\xc5\xbce by\xc4\x87 \xc5\xbale spakowany plik image w zip lub nie jest to sytem dla Twojego modelu ."')
             os.system('echo "Instalowany system może sieę nie uruchomić poprawnie! Sprawdż poprawność kataogow w instalwoanym image!!!"')
@@ -624,7 +599,6 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
     if os.path.exists('/tmp/init4'):
         os.system('rm -f /tmp/init4; init 3')
 
-    os.system('echo "Zako\xc5\x84czono instalacj\xc4\x99 nowego systemu. EXIT "')
     os.system('echo "End of installation:"; date +%T')
 
 def RemoveUnpackDirs():
@@ -687,11 +661,10 @@ def RemoveUnpackDirs():
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/uclan'):
         rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/uclan') 
 
-    os.system('echo "Remove Unpack Dirs..."')
 
 def NEOBootExtract(source, target, ZipDelete, BlackHole):
     RemoveUnpackDirs()
-    os.system('echo "The installation of the new image has started:"; date +%T;"Rozpakowywanie pliku instalacyjnego...\nThis may take a few minutes to complete...."')
+    os.system('echo "Installation started:"; date +%T;echo "Extracting the installation file..."')
 
     if os.path.exists('' + getNeoLocation() + 'ImageBoot/.without_copying'):
         os.system('rm ' + getNeoLocation() + 'ImageBoot/.without_copying') 
@@ -1103,112 +1076,112 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             rc = os.system(cmd)
 
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/sf4008'):
-            os.system('echo "Instalacja systemu Octagon SF4008."')
+            os.system('echo "Please wait. System installation Octagon SF4008."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/sf4008/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/sf4008/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/octagon/sf8008'):
-            os.system('echo "Instalacja systemu Octagon SF8008."')
+            os.system('echo "Please wait. System installation Octagon SF8008."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/octagon/sf8008/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/octagon/sf8008/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/osmio4k'):
-            os.system('echo "Instalacja systemu EDISION osmio4k"')
+            os.system('echo "Please wait. System installation EDISION osmio4k"')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/osmio4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/osmio4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dm900'):
-            os.system('echo "Instalacja systemu Dreambox DM900."')
+            os.system('echo "Please wait. System installation Dreambox DM900."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/dm900/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/dm900/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/%s.tar.xz' % source):
-            os.system('echo "Instalacja systemu spakowanego w plik tar.xz w toku..."')
+            os.system('echo "Please wait. System installation spakowanego w plik tar.xz w toku..."')
             os.system('cp -r ' + getNeoLocation() + 'ImagesUpload/%s.tar.xz  ' + getNeoLocation() + 'ImagesUpload/rootfs.tar.xz' % source)
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/rootfs.tar.xz; tar -jJxvf ' + getNeoLocation() + 'ImagesUpload/rootfs.tar.xz -C  ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2'):
-            os.system('echo "Instalacja systemu  HD51 "')
+            os.system('echo "Please wait. System installation  HD51 "')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/hd51/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)         
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):
-            os.system('echo "Instalacja systemu AX HD60 4K"')
+            os.system('echo "Please wait. System installation AX HD60 4K"')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/hd60/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/hd60/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/gigablue/quad4k'):
-            os.system('echo "Instalacja systemu GigaBlue quad4k"')
+            os.system('echo "Please wait. System installation GigaBlue quad4k"')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/gigablue/quad4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/gigablue/quad4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/gigablue/ue4k'):
-            os.system('echo "Instalacja systemu GigaBlue ue4k."')
+            os.system('echo "Please wait. System installation GigaBlue ue4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/gigablue/ue4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/gigablue/ue4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/solo4k'):
-            os.system('echo "Instalacja systemu VuPlus Solo4K."')
+            os.system('echo "Please wait. System installation VuPlus Solo4K."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/solo4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/solo4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/uno4k'):
-            os.system('echo "Instalacja systemu dla modelu VuPlus Uno4K."')
+            os.system('echo "Please wait. System installation dla modelu VuPlus Uno4K."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/uno4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/uno4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/uno4kse'):
-            os.system('echo "Instalacja systemu VuPlus Uno4kse."')
+            os.system('echo "Please wait. System installation VuPlus Uno4kse."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/uno4kse/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/uno4kse/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/zero4k'):
-            os.system('echo "Instalacja systemu VuPlus zero4K."')
+            os.system('echo "Please wait. System installation VuPlus zero4K."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/zero4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/zero4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/ultimo4k'):
-            os.system('echo "Instalacja systemu VuPlus Ultimo4K."')
+            os.system('echo "Please wait. System installation VuPlus Ultimo4K."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/ultimo4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/ultimo4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/vuplus/duo4k'):
-            os.system('echo "Instalacja systemu VuPlus Duo4k."')
+            os.system('echo "Please wait. System installation VuPlus Duo4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/vuplus/duo4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/vuplus/duo4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/update/revo4k'):
-            os.system('echo "Instalacja systemu Revo4k."')
+            os.system('echo "Please wait. System installation Revo4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/update/revo4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/update/revo4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/update/galaxy4k'):
-            os.system('echo "Instalacja systemu Galaxy4k."')
+            os.system('echo "Please wait. System installation Galaxy4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/update/galaxy4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/update/galaxy4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/zgemma/h7/rootfs.tar.bz2'):
-            os.system('echo "Instalacja systemu Zgemma H7."')
+            os.system('echo "Please wait. System installation Zgemma H7."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/zgemma/h7/rootfs.tar.bz2; tar -jxf ' + getNeoLocation() + 'ImagesUpload/zgemma/h7/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)   
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/zgemma/h9/rootfs.tar.bz2'):
-            os.system('echo "Instalacja systemu Zgemma H9S ."')
+            os.system('echo "Please wait. System installation Zgemma H9S ."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/zgemma/h9/rootfs.tar.bz2; tar -jxf ' + getNeoLocation() + 'ImagesUpload/zgemma/h9/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)                                                                          
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/miraclebox/mini4k'):
-            os.system('echo "Instalacja systemu Miraclebox mini4k."')
+            os.system('echo "Please wait. System installation Miraclebox mini4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/miraclebox/mini4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/miraclebox/mini4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/miraclebox/ultra4k'):
-            os.system('echo "Instalacja systemu Miraclebox ultra4k."')
+            os.system('echo "Please wait. System installation Miraclebox ultra4k."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/miraclebox/ultra4k/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/miraclebox/ultra4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e4hd'):
-            os.system('echo "Instalacja systemu Axas E4HD 4K Ultra w toku..."')
+            os.system('echo "Please wait. System installation Axas E4HD 4K Ultra w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/e4hd/rootfs.tar.bz2; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/e4hd/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/update/lunix3-4k'):
-            os.system('echo "Instalacja systemu Qviart lunix3-4k w toku..."')
+            os.system('echo "Please wait. System installation Qviart lunix3-4k w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/update/lunix3-4k; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/update/lunix3-4k/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dinobot/u5'):
-            os.system('echo "Instalacja systemu dinobot w toku..."')
+            os.system('echo "Please wait. System installation dinobot w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/dinobot/u5; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/dinobot/u5/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/uclan/ustym4kpro'):
-            os.system('echo "Instalacja systemu ustym4kpro w toku..."')
+            os.system('echo "Please wait. System installation ustym4kpro w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/uclan/ustym4kpro; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/uclan/ustym4kpro/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000'):
-            os.system('echo "Instalacja systemu GI ET-11000 4K w toku..."')
+            os.system('echo "Please wait. System installation GI ET-11000 4K w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/et1x000; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/et1x000/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e2/update'):
-            os.system('echo "Instalacja systemu Ferguson Ariva 4K Combo w toku..."')
+            os.system('echo "Please wait. System installation Ferguson Ariva 4K Combo w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/e2/update; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/e2/update/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
         else:
