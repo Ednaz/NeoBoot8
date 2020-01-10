@@ -27,6 +27,7 @@ cd $Cel/NeoBoot
 chmod 755 ./bin/*
 chmod 755 ./ex_init.py
 chmod 755 ./files/*.sh
+chmod 755 ./files/neo_location
 chmod -R +x ./ubi_reader/*
 if [ $PL ] ; then
   echo ""
