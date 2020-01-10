@@ -41,3 +41,6 @@ Dziękuję wszystkim kolegom wpierającym projekt neoboot.
 Dziękuję też kolegom wspierającym projekt.
 
 pozdrawiam gutosie
+
+Автор плагина gutosie
+https://github.com/gutosie/NeoBoot8
