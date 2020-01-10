@@ -371,6 +371,11 @@ class NeoBootInstallation(Screen):
             system(cmd)
             print '[MULTI-BOOT]: ', cmd
             self.session.open(Console, _('    NeoBot - Available media:'), [message, cmd])
+            if fileExists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom'):
+                if not fileExists('%sImageBoot/.version' % getNeoLocation()):
+                    os.system('mkdir -p %s; sync; chmod 0755 /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom' % getNeoLocation())
+            else:
+                pass
         except:
             pass
 
