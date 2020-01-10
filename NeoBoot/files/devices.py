@@ -434,6 +434,20 @@ class DevicesConf(Screen, ConfigListScreen):
             if fileExists('/etc/init.d/udev'):
                 filename = '/etc/init.d/udev'
                 if os.path.exists(filename):
+
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('mount -a') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+
+
                     filename2 = filename + '.tmp'
                     out = open(filename2, 'w')
                     f = open(filename, 'r')
@@ -450,7 +464,22 @@ class DevicesConf(Screen, ConfigListScreen):
 #                    os.system('mount -a; echo "mount -a" >> /etc/init.d/udev; echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/mountpoint.sh" >> /etc/init.d/udev; echo "exit 0" >> /etc/init.d/udev')
 
             if fileExists('/etc/init.d/mdev'):
-                system('mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev')
+                filename = '/etc/init.d/mdev'
+                if os.path.exists(filename):
+
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('mount -a') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+                    
+                    system('mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev')
 #                system('mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev; echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/mountpoint.sh" >> /etc/init.d/mdev')
            
                                                           
