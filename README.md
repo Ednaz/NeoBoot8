@@ -12,7 +12,7 @@ opkg update
 
 opkg install curl 
 
-curl -kLs https://raw.githubusercontent.com/Ednaz/NeoBoot8/master/iNB.sh|sh
+curl -kLs https://raw.githubusercontent.com/Ednaz/NeoBoot8/master/iNB.sh | sh
 #
 
 Inny sposób na zainstalkowanie, jeśli narzędzie curl nie zadziała poprawnie, to proszę spróbować polecenia :
