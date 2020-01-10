@@ -80,7 +80,7 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
 
     if stopenigma == 'True':
         os.system('echo "All system processes have been stopped,\n please wait, after the installation is completed, E2 will restart..."')
-        os.system('sync; touch /tmp/init4; init 4')
+        os.system('touch /tmp/init4; init 4')
 
     rc = NEOBootExtract(source, target, ZipDelete, BlackHole)    
     if not os.path.exists('%s/ImageBoot/%s/usr/lib/enigma2/python/Plugins/Extensions' % (media, target)):
@@ -236,8 +236,8 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 rc = os.system(cmd)
             cmd = 'cp -r /etc/fstab %s/ImageBoot/%s/etc/fstab' % (media, target)
             rc = os.system(cmd)
-#            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
-#            rc = os.system(cmd)
+            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
+            rc = os.system(cmd)
 
         if LanWlan == 'True':
             if os.path.exists('%s/ImageBoot/%s/etc/vtiversion.info' % (media, target)):
@@ -371,65 +371,63 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
 #        if getFSTAB2() == 'OKinstall':
                                                   
                # os.system(' echo ' + fstablines + '   >> %s/ImageBoot/%s/etc/fstab' % (media, target))
- 
-
-
-
+         
         namefile = media + '/ImageBoot/' + target + '/etc/fstab'
         namefile2 = namefile + '.tmp'
-        out = open(namefile2, 'w')
-        f = open(namefile, 'r')
-        for line in f.readlines():
+        if os.path.exists(namefile2):
+            out = open(namefile2, 'w')
+            f = open(namefile, 'r')
+            for line in f.readlines():
 
-            if line.find('/dev/mmcblk0p1') != -1:
-                line = '#' + line
-            elif line.find('/dev/mmcblk0p2') != -1:
-                line = '#' + line
-            elif line.find('/dev/mmcblk0p3') != -1:
-                line = '#' + line
-            elif line.find('/dev/mmcblk0p4') != -1:
-                line = '#' + line
-            elif line.find('/dev/mmcblk0p5') != -1:
-                line = '#' + line                
-            elif line.find('/dev/mmcblk0p6') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mmcblk0p7') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mmcblk0p8') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mmcblk0p9') != -1:
-                line = '#' + line 
-            elif line.find('/dev/root') != -1:
-                line = '#' + line                
-            elif line.find('/dev/mtdblock1') != -1:
-                line = '#' + line
-            elif line.find('/dev/mtdblock2') != -1:
-                line = '#' + line
-            elif line.find('/dev/mtdblock3') != -1:
-                line = '#' + line
-            elif line.find('/dev/mtdblock4') != -1:
-                line = '#' + line
-            elif line.find('/dev/mtdblock5') != -1:
-                line = '#' + line                
-            elif line.find('/dev/mtdblock6') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mtdblock7') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mtdblock8') != -1:
-                line = '#' + line 
-            elif line.find('/dev/mtdblock9') != -1:
-                line = '#' + line 
-            elif line.find('/dev/root') != -1:
-                line = '#' + line
-            out.write(line)
+                if line.find('/dev/mmcblk0p1') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mmcblk0p2') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mmcblk0p3') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mmcblk0p4') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mmcblk0p5') != -1:
+                    line = '#' + line                
+                elif line.find('/dev/mmcblk0p6') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mmcblk0p7') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mmcblk0p8') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mmcblk0p9') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/root') != -1:
+                    line = '#' + line                
+                elif line.find('/dev/mtdblock1') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mtdblock2') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mtdblock3') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mtdblock4') != -1:
+                    line = '#' + line
+                elif line.find('/dev/mtdblock5') != -1:
+                    line = '#' + line                
+                elif line.find('/dev/mtdblock6') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mtdblock7') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mtdblock8') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/mtdblock9') != -1:
+                    line = '#' + line 
+                elif line.find('/dev/root') != -1:
+                    line = '#' + line
+                out.write(line)
 
-        f.close()
-        out.close()
-        os.rename(namefile2, namefile)
+            f.close()
+            out.close()
+            os.rename(namefile2, namefile)
 
         tpmd = media + '/ImageBoot/' + target + '/etc/init.d/tpmd'
         if os.path.exists(tpmd):
-            os.system('rm ' + tpmd)
+                os.system('rm ' + tpmd)
 
         fname = media + '/ImageBoot/' + target + '/usr/lib/enigma2/python/Components/config.py'
         if os.path.exists(fname):
@@ -556,9 +554,8 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
     os.system('cp ' + getNeoLocation() + 'ImageBoot/.neonextboot ' + getNeoLocation() + 'ImageBoot/%s/.multinfo' % target)
     out = open(mediahome + '.neonextboot', 'w')
     out.write('Flash')
-    out.close()
-    os.system('echo "Zako\xc5\x84czono instalacj\xc4\x99 nowego systemu. EXIT "')
-    os.system('echo "End of installation:"; date +%T')                                                                        
+    out.close()       
+    os.system('echo "A few more moments and its over. "')                                                                       
     if '.tar.xz' not in source and not os.path.exists('' + getNeoLocation() + '/ImageBoot/%s/etc/issue' %  target):
             os.system('echo ""; echo "Nie zainstalowano systemu ! Powodem b\xc5\x82\xc4\x99du instalacji mo\xc5\xbce by\xc4\x87 \xc5\xbale spakowany plik image w zip lub nie jest to sytem dla Twojego modelu ."')
             os.system('echo "Instalowany system może sieę nie uruchomić poprawnie! Sprawdż poprawność kataogow w instalwoanym image!!!"')
@@ -570,11 +567,13 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
         os.system('rm ' + getNeoLocation() + 'image_cache')
     if os.path.exists('' + getNeoLocation() + 'ImageBoot/.without_copying'):
         os.system('rm ' + getNeoLocation() + 'ImageBoot/.without_copying') 
-    rc = os.system('sync')
+
     rc = RemoveUnpackDirs()
     if os.path.exists('/tmp/init4'):
         os.system('rm -f /tmp/init4; init 3')
 
+    os.system('echo "Zako\xc5\x84czono instalacj\xc4\x99 nowego systemu. EXIT "')
+    os.system('echo "End of installation:"; date +%T')
 
 def RemoveUnpackDirs():
     os.chdir(media + '/ImagesUpload')
@@ -619,14 +618,10 @@ def RemoveUnpackDirs():
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/xp1000 ') 
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dinobot '):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/dinobot ') 
-
-
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e2/update'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/e2')                                                                                          
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/et1x000') 
-        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/vuplus')
-
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/octagon/sf8008'):          
         rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/octagon; rm -r ' + getNeoLocation() + 'ImagesUpload/octagon')                                          
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):          
@@ -641,7 +636,6 @@ def RemoveUnpackDirs():
         rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/uclan') 
 
     os.system('echo "Remove Unpack Dirs..."')
-
 
 def NEOBootExtract(source, target, ZipDelete, BlackHole):
     os.system('echo "Start of installation:"; date +%T')
@@ -853,7 +847,6 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             rc = os.system('rm ' + getNeoLocation() + 'image_cache')
 
             if '.tar.xz' not in source and not os.path.exists('%s/ImageBoot/%s/etc/issue' % (media, target)):
-                rc = os.system('sync')
                 os.system("echo 3 > /proc/sys/vm/drop_caches")
 
                 os.system('echo ""; echo "Nie zainstalowano systemu ! Powodem b\xc5\x82\xc4\x99du instalacji mo\xc5\xbce by\xc4\x87 kernel-module-nandsim."')
@@ -863,7 +856,7 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
                 rc = os.system('rm -rf /lib/modules/%s/kernel/drivers/mtd/nand/nandsim.ko ' % getKernelVersion())
                                
                 os.system('rm -r %s/ImageBoot/%s' % (media, target))
-                os.system('sleep 5; sync; init 4; sleep 5; init 3 ')
+                os.system('sleep 5; init 4; sleep 5; init 3 ')
 
         #UBI_READER
         elif os.path.exists('/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/ubi_reader/ubi_extract_files.py'):
