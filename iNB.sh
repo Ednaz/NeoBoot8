@@ -8,7 +8,7 @@ fi
 [ -e /tmp/neoboot.zip ] && rm -f /tmp/neoboot.zip
 [ -e /tmp/neoboot-master ] && rm -rf /tmp/neoboot-master
 [ $PL ] && echo "Pobieranie archiwum..." || echo "Downloading archive file..."
-URL='https://github.com/gutosie/NeoBoot_VuUltimo4K/archive/master.zip'
+URL='https://github.com/gutosie/NeoBoot8/archive/master.zip'
 curl -kLs $URL  -o /tmp/neoboot.zip
 cd /tmp/
 if [ ! -e /tmp/master.zip ]; then 
@@ -21,8 +21,8 @@ rm -f /tmp/neoboot.zip
 [ $PL ] && echo "Instalowanie..." || echo "Instaling..."
 Cel="/usr/lib/enigma2/python/Plugins/Extensions"
 [ -e $Cel/NeoBoot ] && rm -rf $Cel/NeoBoot/* || mkdir -p $Cel/NeoBoot
-mv -f /tmp/NeoBoot_VuUltimo4K-master/NeoBoot/* $Cel/NeoBoot
-[ -e /tmp/NeoBoot_VuUltimo4K-master ] && rm -rf /tmp/NeoBoot_VuUltimo4K-master
+mv -f /tmp/NeoBoot8-master/NeoBoot/* $Cel/NeoBoot
+[ -e /tmp/NeoBoot8-master ] && rm -rf /tmp/NeoBoot8-master
 cd $Cel/NeoBoot
 chmod 755 ./bin/*
 chmod 755 ./ex_init.py
@@ -39,7 +39,7 @@ if [ $PL ] ; then
 else
   echo ""
   echo "#####################################################"
-  echo "#          NEOBOOT INSTALLED SUCCESSFULLY           #"
+  echo "#          NEOBOOT  INSTALLED SUCCESSFULLY           #"
   echo "#####################################################"
   echo "#             PLEASE RESTART YOUR STB               #"
   echo "#####################################################"
