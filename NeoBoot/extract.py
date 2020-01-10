@@ -239,6 +239,58 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
             cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
             rc = os.system(cmd)
 
+###########################################################
+
+            if os.path.exists('%s/ImageBoot/%s/etc/init.d/udev' % (media, target)):
+                filename = '%s/ImageBoot/%s/etc/init.d/udev'
+                if os.path.exists(filename):
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('mount -a') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+
+
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('exit 0') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+
+                    cmd = 'mount -a; echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
+                    rc = os.system(cmd)
+
+            if os.path.exists('%s/ImageBoot/%s/etc/init.d/mdev'% (media, target)):
+                filename = '%s/ImageBoot/%s/etc/init.d/mdev'
+                if os.path.exists(filename):
+
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('mount -a') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+                    
+                    cmd = 'mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
+                    rc = os.system(cmd)
+
         if LanWlan == 'True':
             if os.path.exists('%s/ImageBoot/%s/etc/vtiversion.info' % (media, target)):
                 os.system('echo "Nie skopiowano LAN-WLAN, nie zalecane dla tego image."')
@@ -638,8 +690,8 @@ def RemoveUnpackDirs():
     os.system('echo "Remove Unpack Dirs..."')
 
 def NEOBootExtract(source, target, ZipDelete, BlackHole):
-    os.system('echo "Start of installation:"; date +%T')
     RemoveUnpackDirs()
+    os.system('echo "The installation of the new image has started:"; date +%T;"Rozpakowywanie pliku instalacyjnego...\nThis may take a few minutes to complete...."')
 
     if os.path.exists('' + getNeoLocation() + 'ImageBoot/.without_copying'):
         os.system('rm ' + getNeoLocation() + 'ImageBoot/.without_copying') 
@@ -648,9 +700,7 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
 
     sourcefile = media + '/ImagesUpload/%s.zip' % source
     sourcefile2 = media + '/ImagesUpload/%s.nfi' % source
-
-    os.system('echo "This may take a few minutes to complete...."')
-
+    
     #Instalacja *.nfi
     if os.path.exists(sourcefile2) is True:
         if sourcefile2.endswith('.nfi'):
@@ -672,7 +722,6 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
         os.system('unzip ' + sourcefile)
         if ZipDelete == 'True':
             os.system('rm -rf ' + sourcefile)
-        os.system('echo "Rozpakowywanie pliku instalacyjnego..."')
 
     #Instalacja MIPS
     if getCPUtype() == 'MIPS':                 
