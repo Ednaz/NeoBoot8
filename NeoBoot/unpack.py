@@ -112,6 +112,7 @@ class InstallImage(Screen, ConfigListScreen):
              'bcm7251',
              'sf4008',
              'et1x000',
+             'dm920',
              'bcm7251s',
              'h7',
              'hi3798mv200'

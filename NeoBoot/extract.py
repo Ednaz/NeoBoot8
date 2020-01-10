@@ -147,6 +147,11 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM GI ET-11000 4K."')
 
+#arm Dreambox dm920
+            elif getBoxHostName() == 'dm920': 
+                os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
+                os.system('echo "Skopiowano kernel.bin STB-ARM DM920 4K."')
+
 #arm  Ariva 4K Combo
             elif getBoxHostName() == 'et1x000': #getCPUSoC() == 'bcm7251' or
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/e2/update/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
@@ -648,6 +653,8 @@ def RemoveUnpackDirs():
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/e2')                                                                                          
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/et1x000'):
         rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/et1x000') 
+    elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/dm920 '):
+        rc = os.system('rm -r ' + getNeoLocation() + 'ImagesUpload/dm920 ')                              
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/octagon/sf8008'):          
         rc = os.system('mv ' + getNeoLocation() + 'ImagesUpload/usb_update.bin ' + getNeoLocation() + 'ImagesUpload/octagon; rm -r ' + getNeoLocation() + 'ImagesUpload/octagon')                                          
     elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/hd60'):          
@@ -1184,6 +1191,10 @@ def NEOBootExtract(source, target, ZipDelete, BlackHole):
             os.system('echo "Please wait. System installation Ferguson Ariva 4K Combo w toku..."')
             cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/e2/update; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/e2/update/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
             rc = os.system(cmd)
+        elif os.path.exists('' + getNeoLocation() + 'ImagesUpload/e2/update'):
+            os.system('echo "Please wait. System installation Ferguson Ariva 4K Combo w toku..."')
+            cmd = 'chmod 777 ' + getNeoLocation() + 'ImagesUpload/dm920; tar -jxvf ' + getNeoLocation() + 'ImagesUpload/dm920/rootfs.tar.bz2 -C ' + getNeoLocation() + 'ImageBoot/' + target + ' > /dev/null 2>&1'
+            rc = os.system(cmd) 
         else:
             os.system('echo "NeoBoot wykrył dłąd!!! Prawdopodobnie brak pliku instalacyjnego."')
 

@@ -605,7 +605,7 @@ class NeoBootInstallation(Screen):
             
 
             # ARM - OctagonSF4008 - DM900 - Zgemma h7S - Octagon sf 8008 - AX HD60 4K  #gbquad4k  arm , #osmio4k  arm, #Zgemma h9  arm, #Zgemma h7S  arm , #Octagon SF4008         
-            if getBoxHostName() == 'et1x000' or getBoxHostName() == 'ustym4kpro' or getTunerModel() ==  'ustym4kpro' or getCPUSoC() == 'bcm7251' or getBoxHostName() == 'sf4008' or getCPUSoC() == 'bcm7251s' or getBoxHostName() == 'h7' or getCPUSoC() == 'bcm7252s' or getBoxHostName() == 'gbquad4k' or getBoxHostName == 'osmio4k' or getBoxHostName() == 'zgemmah9s' or getBoxHostName() == 'ax60' or getBoxHostName() == 'sf8008' or getCPUSoC() == 'bcm7251'  or getCPUSoC() == 'BCM97252SSFF' or getBoxHostName() == 'dm900':
+            if getBoxHostName() == 'dm920' or getBoxHostName() == 'et1x000' or getBoxHostName() == 'ustym4kpro' or getTunerModel() ==  'ustym4kpro' or getCPUSoC() == 'bcm7251' or getBoxHostName() == 'sf4008' or getCPUSoC() == 'bcm7251s' or getBoxHostName() == 'h7' or getCPUSoC() == 'bcm7252s' or getBoxHostName() == 'gbquad4k' or getBoxHostName == 'osmio4k' or getBoxHostName() == 'zgemmah9s' or getBoxHostName() == 'ax60' or getBoxHostName() == 'sf8008' or getCPUSoC() == 'bcm7251'  or getCPUSoC() == 'BCM97252SSFF' or getBoxHostName() == 'dm900':
                         os.system('cp -f /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/bin/neoinitarm /sbin/neoinitarm; chmod 0755 /sbin/neoinitarm; ln -sfn /sbin/neoinitarm /sbin/init; mv /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/target/arm_run.py /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/run.py; cd')                         
                                                  
 
@@ -1423,6 +1423,7 @@ valign="center" backgroundColor="black" transparent="1" foregroundColor="white" 
              'bcm7251', 
              'sf4008', 
              'et1x000',
+             'dm920',
              'bcm7251s', 
              '7241', 
              'h7',
