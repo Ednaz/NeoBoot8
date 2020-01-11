@@ -8,7 +8,7 @@ fi
 [ -e /tmp/neoboot.zip ] && rm -f /tmp/neoboot.zip
 [ -e /tmp/neoboot-master ] && rm -rf /tmp/neoboot-master
 [ $RU ] && echo "Скачивание zip архива..." || echo "Downloading archive file..."
-URL='https://github.com/gutosie/NeoBoot8/archive/master.zip'
+URL='https://github.com/Ednaz/NeoBoot8/archive/master.zip'
 curl -kLs $URL  -o /tmp/neoboot.zip
 cd /tmp/
 if [ ! -e /tmp/master.zip ]; then 
