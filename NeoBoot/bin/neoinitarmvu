@@ -85,7 +85,7 @@ else
 	if [ ! -e $NEODEVICE$IMAGEKATALOG ]; then
                 ln -sfn /sbin/init.sysvinit /sbin/init
                 echo "Flash "  > $NEODEVICE$IMAGEKATALOG/.neonextboot 
-                echo "Reinstall kernel -Press number 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
+                echo "Переустановите kernel -Нажмите кнопку 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
                 reboot -f
 	fi    
 
@@ -101,10 +101,10 @@ else
 	else
 	
 		if [ -f `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/.control_ok ]; then
-	        echo "No Error - Booting image normal..."
+	        echo "Нет ошибки - нормальная загрузка имиджа..."
 		else 
             if [ -f `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/.control_boot_new_image ]; then
-                echo "First start image - The first attempt to launch a new image... "; 
+                echo "Первый старт имиджа - первая попытка запустить новый имидж... "; 
                 rm -f `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/.control_boot_new_image > /dev/null 2>&1 
             else 
                 HOSTNAME=`cat /etc/hostname` 
@@ -116,7 +116,7 @@ else
                     elif [ $HOSTNAME  = "vuduo4k" ] ; then                                                         			        
                         dd if=`cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/flash-kernel-$HOSTNAME.bin of=/dev/mmcblk0p6                                            
                     fi
-                    echo "Wrong kernel. Press number 3"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
+                    echo "Неправильный kernel. Нажмите кнопку 3"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
                     ln -sfn /sbin/init.sysvinit /sbin/init
                     echo "Flash "  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/.neonextboot                 	sleep 5; reboot -f              
                 fi
@@ -163,7 +163,7 @@ else
                 /usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/error.mvi > /dev/null 2>&1
                 sync; ln -sfn /sbin/init.sysvinit /sbin/init
                 echo "Flash "  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/.neonextboot
-                echo "Used Kernel: Reinstall kernel !"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
+                echo "Используйте Kernel: Переустановите kernel !"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
                 sleep 15; reboot -f
 
 			fi
