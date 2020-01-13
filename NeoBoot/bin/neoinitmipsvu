@@ -63,7 +63,7 @@ else
 		/sbin/depmod -Ae > /dev/null 2>&1
 	fi
 
-        echo "NeoBoot запускает mdev и mout HDD USB ..."
+        echo "NeoBoot is starting mdev and mout HDD USB ..."
         echo "/sbin/mdev" > /proc/sys/kernel/hotplug
         /etc/init.d/mdev > /dev/null 2>&1
 
@@ -71,7 +71,7 @@ else
         echo " "        
 
 ############..>>>>>>>>        
-        echo "Поиск NEOBOOT... "		
+        echo "Search NEOBOOT... "		
 	mnttest="nouuid"
 	if [ -e $NEOBOOT/bin/install  ]; then
     	                orgimag1=`mount | sed '/sd/!d' | cut -d" " -f1`
@@ -84,10 +84,10 @@ else
 				        mount $selectmnt $NEODEVICE > /dev/null 2>&1
 			        fi
 			        if [ ! -e $NEODEVICE$IMAGEKATALOG  ]; then
-				        echo "NEOBOOT не был установлен на: " $selectmnt
+				        echo "NEOBOOT hasn't been installed on: " $selectmnt
 				        umount $NEODEVICE > /dev/null 2>&1 
 			        else
-				        echo "NEOBOOT был установлен на: " $selectmnt
+				        echo "NEOBOOT has been installed on: " $selectmnt
 				        break;
 			        fi 			
 		        done
@@ -98,34 +98,34 @@ else
 	            fi
 
 	            if [ $mnttest="nouuid" ] ; then
-	                echo "NeoBoot монтирует устройство"
+	                echo "NeoBoot mount by Device"
 		        DEVICES1=`find /dev/sd??`
 		        for DEVICE in $DEVICES1;
 		        do
 			        if [ -e $NEODEVICE  ]; then
-				        echo "neoboot проверка установки на: " $DEVICE
+				        echo "neoboot checking installation on: " $DEVICE
 				        mount $DEVICE $NEODEVICE > /dev/null 2>&1 
 			        fi
 
 			        if [ ! -e $NEODEVICE$IMAGEKATALOG  ]; then
-				        echo "NeoBoot не был установлен на: " $DEVICE
+				        echo "NeoBoot hasn't been installed on: " $DEVICE
 				        umount $NEODEVICE > /dev/null 2>&1 
 			        else
-				        echo "NEOBOOTt был установлен на: " $DEVICE
+				        echo "NEOBOOTt has been installed on: " $DEVICE
 				        break;
 			        fi 
 		        done
 	            elif [ $mnttest="uuid" ]; then	
-		        echo "NEOBOOT смонтирован по UUID"
+		        echo "NEOBOOT mount by UUID"
 	fi
 ###>>>>>>>>>>>>>>>>> 
 
 	MODPROBE=/sbin/modprobe
 
-	echo "Загрузка модулей видео и кадрового буфера ..."
+	echo "Load video and frame buffer modules ..."
         modprobe dvb
 
-	echo "NeoBoot загружает модули"
+	echo "NeoBoot is loading modules"
 	for mod in dvb; do
 		$MODPROBE $mod
 	done
@@ -134,7 +134,7 @@ else
 	/etc/init.d/modutils.sh
 	#
 
-	echo "Устанавливает BOOTLOGO ..."
+	echo "Set BOOTLOGO ..."
         sleep 1	
                          
 	cat /etc/videomode > /proc/stb/video/videomode
@@ -154,7 +154,7 @@ else
         /etc/init.d/bootlogo > /dev/null 2>&1
         
         sleep 2
-        echo "Конец загрузки драйвера"
+        echo "Driverload end"
 
 	if [ -f $LIBDIR/kernel/fs/autofs4/autofs4.ko ]; then
 		/sbin/insmod $LIBDIR/kernel/fs/autofs4/autofs4.ko > /dev/null 2>&1
@@ -172,12 +172,12 @@ else
 	
         UPLOAD=ImagesUpload
 	if [ ! -e $NEODEVICE$IMAGEKATALOG ]; then
-                echo "Ошибка монтирования, вернуться к имиджу во Flash..."
+                echo "Error mounting, Return to image Flash..."
                 sleep 2
                 ln -sfn /sbin/init.sysvinit /sbin/init
                 echo "Flash "  > $NEODEVICE$IMAGEKATALOG/.neonextboot 
-                echo "Переустановите kernel -нажмите кнопку 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
-                echo " ОТправить весь процесс TERM- KILL ..."
+                echo "Reinstall kernel -Press number 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
+                echo " Sending all processes the TERM- KILL signal..."
                 reboot -f
 	fi
           
@@ -189,35 +189,35 @@ else
 	fi
 	        
 	if [ $TARGET = "Flash" ]; then
-		echo "NEOBOOT загружает имидж из " $TARGET
+		echo "NEOBOOT is booting image from " $TARGET
 		/bin/umount /media/usb > /dev/null 2>&1
 		/bin/umount /media/hdd > /dev/null 2>&1
 		/usr/bin/showiframe /usr/share/bootlogo.mvi > /dev/null 2>&1
 		sync; ln -sfn /sbin/init.sysvinit /sbin/init#; /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom
                 echo "----------------------------------"
-	        echo "         ЗАГРУЗИТЬ ИМИДЖ ИЗ FLASH     "
+	        echo "     BOOT UP IMAGE FROM FLASH     "
                 echo "----------------------------------"		
 	else
                                                  
                 ######### test boot new imaga>>>>                               
                 if [ -e $NEODEVICE$IMAGEKATALOG/$TARGET/.control_ok ]; then
-	                        [ $RU ] && echo "Нет ошибки - нормальная загрузка имиджа..." || echo "No Error - Booting image normal..."
+	                        [ $PL ] && echo "Nie ma bledu, normalny start image..." || echo "No Error - Booting image normal..."
                 else 
           			if [ -e $NEODEVICE$IMAGEKATALOG/$TARGET/.control_boot_new_image ]; then
-                    			echo "Первый старт имиджа - первая попытка запустить новый имидж... "; rm -f $NEODEVICE$IMAGEKATALOG/$TARGET/.control_boot_new_image 
+                    			echo "First start image - The first attempt to launch a new image... "; rm -f $NEODEVICE$IMAGEKATALOG/$TARGET/.control_boot_new_image 
           			else    
-              			        echo "Неправильный kernel. Нажмите кнопку 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
+              			        echo "Wrong kernel. Press number 3"  > $NEODEVICE$UPLOAD/.kernel/used_flash_kernel
                     			ln -sfn /sbin/init.sysvinit /sbin/init
                     			echo "Flash "  > $NEODEVICE$IMAGEKATALOG/.neonextboot
-                    			echo "Ошибка - NeoBoot не может запустить этот имидж !!! "
-                    			echo "Перезагрузите ресивер - Вернуться во Flash... "
-                                        echo "NeoBoot загружается" $TARGET                     			
+                    			echo "Error - NeoBoot he can not run it image !!! "
+                    			echo "Restart STB - Back to Flash... "
+                                        echo "NeoBoot is booting" $TARGET                     			
                     			sleep 5; reboot -f   
           			fi
                 fi
                 ######### test boot new image<<<<<                
                                                                 
-		echo "NeoBoot загружается" $TARGET " из " `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`
+		echo "NeoBoot is booting" $TARGET " from " `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`
 		
                 if [ -d $NEODEVICE$IMAGEKATALOG/$TARGET ]; then
 			if [ -f $NEODEVICE$IMAGEKATALOG/$TARGET/etc/init.d/udev ]; then
@@ -262,27 +262,27 @@ else
                                done	
 
                         chmod 755 `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh                                                                        
-                        echo "NeoBOOT создал скрипт монтирования enigma2_pre_start.sh " 
+                        echo "NeoBOOT created the file mount enigma2_pre_start.sh " 
                         
-                        echo " [NEOBOOT] используйте chroot ... exec /usr/sbin/chroot..."
+                        echo " [NEOBOOT] Use chroot ... exec /usr/sbin/chroot..."
                                                                       
 			if [ -f `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/sbin/init.sysvinit ]; then   
                                     echo "----------------------------------------"
-	                            echo "   -=*[ ЗАГРУЗИТЬ ИМИДЖ С ДИСКА ]*=-    "
+	                            echo "   -=*[ BOOT UP IMAGE FROM DISK ]*=-    "
                                     echo "----------------------------------------"                                                                                                                     
                                     exec /usr/sbin/chroot `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET /sbin/init.sysvinit
 			elif [ -f `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET/sbin/init ]; then                                    
                                     exec /usr/sbin/chroot `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/$TARGET /sbin/init        
 			else
                                     echo " "                  
-                                    echo "                       NEOBOOT - ОШИБКА !!!                                 "
-                                    echo "Не найден правильно распакованный имидж "$TARGET" из раздела " $DEVICE
-                                    echo "Проверьте правильность распакованных каталогов в выбранном имидже.      "
+                                    echo "                       NEOBOOT - ERROR !!!                                 "
+                                    echo "Not found correctly unpacked image "$TARGET" z partycji " $DEVICE
+                                    echo "Check the correctness of unpacked catalogs in the selected one image.      "
                                     echo "                      Back to image Flash...                             "                                                                    
                                     /usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/error.mvi > /dev/null 2>&1
                                     sync; ln -sfn /sbin/init.sysvinit /sbin/init
                                     echo "Flash "  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$IMAGEKATALOG/.neonextboot
-                                    echo "Используйте Kernel: Переустановите kernel !"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
+                                    echo "Used Kernel: Reinstall kernel !"  > `cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location`$UPLOAD/.kernel/used_flash_kernel
                                     sleep 15; reboot -f
 
 			fi

@@ -100,24 +100,25 @@ else
                             if [ -e $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh ] ; then
                                 rm -f $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
                             fi
-                            cp -f /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
-                            orgimag=`mount | sed '/sd/!d' | cut -d" " -f1`
-                               for item in $orgimag; do
-                                   ohdd=`echo  $item | cut -d"/" -f3`
-                                   nhdd=`mount | sed "/\$ohdd/!d" | sed q | cut -d" " -f3`
-                                   if [ $nhdd ==$(cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location) ]; then
-                                      echo $nhdd
-                                      echo "mkdir "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
-                                      echo "mount "$item $nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
-                                      echo "[NeoBOOT] created in /usr/bin the file enigma2_pre_start.sh "
-                                   else
-                                      echo "umount "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
-                                      echo "mkdir "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
-                                      echo "mount "$item $nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
-                                      echo "[NeoBOOT] enigma2_pre_start.sh "
-                                      echo ok 
-                                   fi    
-                               done	                             
+                            cp -f /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/mountpoint.sh $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
+                            if [ ! -e $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh ] ; then
+                                orgimag=`mount | sed '/sd/!d' | cut -d" " -f1`
+                                   for item in $orgimag; do
+                                       ohdd=`echo  $item | cut -d"/" -f3`
+                                       nhdd=`mount | sed "/\$ohdd/!d" | sed q | cut -d" " -f3`
+                                       if [ $nhdd ==$(cat /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/.location) ]; then
+                                          echo $nhdd
+                                          echo "mkdir "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
+                                          echo "mount "$item $nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
+                                          echo "[NeoBOOT] created in /usr/bin the file enigma2_pre_start.sh "
+                                       else
+                                          echo "umount "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
+                                          echo "mkdir "$nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh
+                                          echo "mount "$item $nhdd  >> $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
+                                          echo "[NeoBOOT] enigma2_pre_start.sh "
+                                          echo ok 
+                                       fi    
+                                   done	                             
                             chmod 0755 $NEODEVICE$IMAGEKATALOG/$TARGET/usr/bin/enigma2_pre_start.sh 
                             #chattr -i $LOCATION$IMAGEBOOT/$TARGET/usr/bin/enigma2_pre_start.sh
                             echo "NeoBOOT created the file mount enigma2_pre_start.sh "

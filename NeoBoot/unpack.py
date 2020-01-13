@@ -89,42 +89,11 @@ class InstallImage(Screen, ConfigListScreen):
         self.target = ConfigText(fixed_size=False)
         self.stopenigma = ConfigYesNo(default=False)     
         self.CopyFiles = ConfigYesNo(default=True)
-        if getCPUtype() == 'ARMv7' and getCPUSoC() or getBoxHostName() == ['7444s', 
-             '7376',                           
-             '7252s',
-             '7278', 
-             '72604',
-             'vuultimo4k'             
-             'vusolo4k',                         
-             'vuuno4k',                          
-             'vuuno4kse',
-             'vuduo4k',
-             'vuzero4k']: 
-            self.CopyKernel = ConfigYesNo(default=True)
-        else:
-            self.CopyKernel = ConfigYesNo(default=False)        
+        self.CopyKernel = ConfigYesNo(default=True)       
         self.TvList = ConfigYesNo(default=False) 
         self.Montowanie = ConfigYesNo(default=False)         
         self.LanWlan = ConfigYesNo(default=False)
-        if getCPUtype() == 'ARMv7' and getCPUSoC() or getBoxHostName() == ['osmio4k', 
-             'ax60',
-             'sf8008', 
-             'bcm7251',
-             'sf4008',
-             'et1x000',
-             'dm920',
-             'bcm7251s',
-             'h7',
-             'hi3798mv200'
-             'zgemmah9s',
-             'bcm7252s',
-             'gbquad4k',              
-             'ustym4kpro',
-             '3798mv200'                                       
-             'dm900'] :
-            self.Sterowniki = ConfigYesNo(default=True)
-        else:
-            self.Sterowniki = ConfigYesNo(default=False)                                                
+        self.Sterowniki = ConfigYesNo(default=False)                                                
         self.InstallSettings = ConfigYesNo(default=False)        
         self.ZipDelete = ConfigYesNo(default=False)                 
         self.RepairFTP = ConfigYesNo(default=False)
@@ -133,7 +102,6 @@ class InstallImage(Screen, ConfigListScreen):
         self.BlackHole = ConfigYesNo(default=False)
         self.target.value = ''
         self.curselimage = ''
-
         try:
             if self.curselimage != self.source.value:
                 self.target.value = self.source.value[:-13]
@@ -262,7 +230,7 @@ class InstallImage(Screen, ConfigListScreen):
 
 
     def check_free_space(self):
-        if Freespace('%sImagesUpload' % getNeoLocation()) < 500000:
+        if Freespace('%sImagesUpload' % getNeoLocation()) < 1000000:
             self.session.open(MessageBox, _('Not enough free space on %s !!\nYou need at least 500Mb free space.\n\nExit plugin.' % getNeoLocation() ), type=MessageBox.TYPE_ERROR)
             return False
         return True

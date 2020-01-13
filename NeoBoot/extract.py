@@ -152,8 +152,13 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/' + getBoxHostName() + '/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM DM920 4K."')
 
+#arm Dreambox dm920
+            elif getBoxHostName() == 'ax51': 
+                os.system('mv ' + getNeoLocation() + 'ImagesUpload/hd51/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
+                os.system('echo "Skopiowano kernel.bin STB-ARM AX 4K Box HD51 4K."')
+
 #arm  Ariva 4K Combo
-            elif getBoxHostName() == 'et1x000': #getCPUSoC() == 'bcm7251' or
+            elif getBoxHostName() == 'arivatwin': #getCPUSoC() == 'bcm7251' or
                 os.system('mv ' + getNeoLocation() + 'ImagesUpload/e2/update/kernel.bin ' + media_target + '/boot/zImage.' + getBoxHostName() + '' + dev_null)
                 os.system('echo "Skopiowano kernel.bin STB-ARM Ariva 4K Combo."')
 
@@ -241,10 +246,8 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                 rc = os.system(cmd)
             cmd = 'cp -r /etc/fstab %s/ImageBoot/%s/etc/fstab' % (media, target)
             rc = os.system(cmd)
-            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
-            rc = os.system(cmd)
-
-###########################################################
+#            cmd = 'cp -r /usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/S50fat.sh %s/ImageBoot/%s/etc/rcS.d' % (media, target)
+#            rc = os.system(cmd)
 
             if os.path.exists('%s/ImageBoot/%s/etc/init.d/udev' % (media, target)):
                 filename = '%s/ImageBoot/%s/etc/init.d/udev' % (media, target)
@@ -261,7 +264,7 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
                     out.close()
                     os.rename(filename2, filename)
 
-                    cmd = 'echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
+                    cmd = 'echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
                     rc = os.system(cmd)
                     cmd = 'echo "exit 0" >> %s/ImageBoot/%s/etc/init.d/udev' % (media, target)
                     rc = os.system(cmd)
@@ -269,7 +272,7 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
             if os.path.exists('%s/ImageBoot/%s/etc/init.d/mdev'% (media, target)):                    
                     cmd = 'echo " " >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
                     rc = os.system(cmd)
-                    cmd = 'echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/neom" >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
+                    cmd = 'echo "mount -a" >> %s/ImageBoot/%s/etc/init.d/mdev' % (media, target)
                     rc = os.system(cmd)
 
         if LanWlan == 'True':
@@ -396,15 +399,29 @@ def NEOBootMainEx(source, target, stopenigma, CopyFiles, CopyKernel, TvList, Mon
             elif not os.path.exists('/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal'):                    
                 os.system('echo "MediaPortal not found."')
 
-    if not os.path.exists('' + getNeoLocation() + 'ImageBoot/.without_copying'):
-    #if os.path.exists('' + getNeoLocation() + 'ImageBoot'):
+# for all image:
+    if not os.path.exists('' + getNeoLocation() + 'ImageBoot/.without_copying'):         
+        if os.path.exists('%s/ImageBoot/%s/etc/init.d/udev' % (media, target)):
+                filename = '%s/ImageBoot/%s/etc/init.d/bootmisc.sh' % (media, target)
+                if os.path.exists(filename):
+                    filename2 = filename + '.tmp'
+                    out = open(filename2, 'w')
+                    f = open(filename, 'r')
+                    for line in f.readlines():
+                        if line.find('exit 0') != -1:
+                            line = '\n'
+                        out.write(line)
+
+                    f.close()
+                    out.close()
+                    os.rename(filename2, filename)
+
+                    cmd = 'echo "/etc/init.d/networking stop; /etc/init.d/networking start;" >> %s/ImageBoot/%s/etc/init.d/bootmisc.sh' % (media, target)
+                    rc = os.system(cmd)
+                    cmd = 'echo "exit 0" >> %s/ImageBoot/%s/etc/init.d/bootmisc.sh' % (media, target)
+                    rc = os.system(cmd)
 
 
-
-#        if getFSTAB2() == 'OKinstall':
-                                                  
-               # os.system(' echo ' + fstablines + '   >> %s/ImageBoot/%s/etc/fstab' % (media, target))
-         
         namefile = media + '/ImageBoot/' + target + '/etc/fstab'
         namefile2 = namefile + '.tmp'
         if os.path.exists(namefile2):

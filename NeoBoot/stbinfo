@@ -54,4 +54,7 @@ gbquad4k            :    bcm7252s    # cat /proc/stb/info/model : gbquad4k #  # 
 
 ustym4kpro: cat /proc/stb/info/chipset 3798mv200 root@ustym4kpro: cat /etc/hostname ustym4kpro
 
-GI ET-11000 4K      :    bcm7251                                  cat /etc/hostname et1x000
+GI ET-11000 4K      :    bcm7251     #cat /etc/hostname et1x000     #Galaxy Innvations ET-11000
+
+AX HD51 4K          :    bcm7251s    # cat /etc/hostname : ax51     # cat /proc/stb/info/boxtype : hd51
+

@@ -459,11 +459,9 @@ class DevicesConf(Screen, ConfigListScreen):
                     f.close()
                     out.close()
                     os.rename(filename2, filename)
+                    os.system('echo "mount -a" >> /etc/init.d/udev')
 
-                    os.system('mount -a; echo "mount -a" >> /etc/init.d/udev')
-#                    os.system('mount -a; echo "mount -a" >> /etc/init.d/udev; echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/mountpoint.sh" >> /etc/init.d/udev; echo "exit 0" >> /etc/init.d/udev')
-
-            if fileExists('/etc/init.d/mdev'):
+           if fileExists('/etc/init.d/mdev'):
                 filename = '/etc/init.d/mdev'
                 if os.path.exists(filename):
 
@@ -479,9 +477,7 @@ class DevicesConf(Screen, ConfigListScreen):
                     out.close()
                     os.rename(filename2, filename)
                     
-                    system('mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev')
-#                system('mount -a; echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev; echo "/usr/lib/enigma2/python/Plugins/Extensions/NeoBoot/files/mountpoint.sh" >> /etc/init.d/mdev')
-           
+                    system('echo "" >> /etc/init.d/mdev; echo "mount -a" >> /etc/init.d/mdev')
                                                           
 class DeviceManagerSummary(Screen):
     def __init__(self, session, parent):
