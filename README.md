@@ -12,7 +12,7 @@ opkg update
 
 opkg install curl 
 
-curl -kLs https://raw.githubusercontent.com/Ednaz/NeoBoot8/master/iNB.sh|sh
+curl -kLs https://raw.githubusercontent.com/Ednaz/NeoBoot8/master/iNB.sh | sh
 #
 
 Inny sposób instalacji, jeśli narzędzie curl nie zadziała poprawnie, to proszę spróbować polecenia :
@@ -40,3 +40,6 @@ Dziękuję wszystkim kolegom wpierającym projekt neoboot.
 
 
 pozdrawiam gutosie
+
+Автор плагина gutosie
+https://github.com/gutosie/NeoBoot8
