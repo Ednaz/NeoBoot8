@@ -38,6 +38,7 @@ Instalację i modyfikacje przeprowadzasz na wlasne ryzyko!!! Przed instalacją l
 
 Dziękuję wszystkim kolegom wpierającym projekt neoboot.
 
+Dziękuję też kolegom wspierającym projekt.
 
 pozdrawiam gutosie
 
